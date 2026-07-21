@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-03-19T12:40:37.584640+00:00",
+  "commit_sha": "3d8690f27e2c1ee9e19742f1908c11dd036760b3",
+  "run_id": "23294950463",
+  "results": [
+    {
+      "case_id": "flux1_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "task": "text-to-image",
+      "latency_s": 7.586,
+      "error": null
+    },
+    {
+      "case_id": "zimage_turbo_t2i_1024",
+      "framework": "sglang",
+      "model": "Tongyi-MAI/Z-Image-Turbo",
+      "task": "text-to-image",
+      "latency_s": 2.538,
+      "error": null
+    },
+    {
+      "case_id": "wan22_t2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-T2V-A14B-Diffusers",
+      "task": "text-to-video",
+      "latency_s": null,
+      "error": "Server at http://127.0.0.1:30000/health did not start within 1200s"
+    },
+    {
+      "case_id": "hunyuanvideo_t2v_480p",
+      "framework": "sglang",
+      "model": "hunyuanvideo-community/HunyuanVideo",
+      "task": "text-to-video",
+      "latency_s": null,
+      "error": "405 Client Error: Method Not Allowed for url: http://127.0.0.1:30000/v1/videos/generations"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+    "bundle_date": "2026-04-25",
+    "active_gt_replacement": false,
+    "consistency_gt_dir": "consistency_gt",
+    "repro_scripts_dir": "repro_scripts",
+    "cases": {
+        "flux_2_image_t2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "flux_2_image_t2i_1gpu.jpg"
+            ]
+        },
+        "flux_2_klein_image_t2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "flux_2_klein_image_t2i_1gpu.jpg"
+            ]
+        },
+        "flux_2_ti2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "flux_2_ti2i_1gpu.jpg"
+            ]
+        },
+        "flux_image_t2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "flux_image_t2i_1gpu.jpg"
+            ]
+        },
+        "qwen_image_edit_2509_ti2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "qwen_image_edit_2509_ti2i_1gpu.jpg"
+            ]
+        },
+        "qwen_image_edit_2511_ti2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "qwen_image_edit_2511_ti2i_1gpu.jpg"
+            ]
+        },
+        "qwen_image_edit_ti2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "qwen_image_edit_ti2i_1gpu.jpg"
+            ]
+        },
+        "qwen_image_layered_i2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "qwen_image_layered_i2i_1gpu.png"
+            ]
+        },
+        "qwen_image_t2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "qwen_image_t2i_1gpu.jpg"
+            ]
+        },
+        "wan2_1_t2v_1.3b": {
+            "source": "wan2.1_official_repo",
+            "script": "repro_scripts/run_official_wan21.sh",
+            "outputs": [
+                "wan2_1_t2v_1.3b_1gpu_frame_0.png",
+                "wan2_1_t2v_1.3b_1gpu_frame_mid.png",
+                "wan2_1_t2v_1.3b_1gpu_frame_last.png"
+            ]
+        },
+        "ltx_2.3_one_stage_ti2v": {
+            "source": "ltx_official_repo",
+            "script": "repro_scripts/gen_official_ltx23.py",
+            "outputs": [
+                "ltx_2.3_one_stage_ti2v_2gpu_frame_0.png",
+                "ltx_2.3_one_stage_ti2v_2gpu_frame_mid.png",
+                "ltx_2.3_one_stage_ti2v_2gpu_frame_last.png"
+            ]
+        },
+        "ltx_2.3_two_stage_t2v_2gpus": {
+            "source": "ltx_official_repo",
+            "script": "repro_scripts/gen_official_ltx23.py",
+            "outputs": [
+                "ltx_2.3_two_stage_t2v_2gpus_2gpu_frame_0.png",
+                "ltx_2.3_two_stage_t2v_2gpus_2gpu_frame_mid.png",
+                "ltx_2.3_two_stage_t2v_2gpus_2gpu_frame_last.png"
+            ]
+        },
+        "ltx_2_3_hq_pipeline": {
+            "source": "ltx_official_repo",
+            "script": "repro_scripts/gen_official_ltx23.py",
+            "outputs": [
+                "ltx_2_3_hq_pipeline_1gpu_frame_0.png",
+                "ltx_2_3_hq_pipeline_1gpu_frame_mid.png",
+                "ltx_2_3_hq_pipeline_1gpu_frame_last.png"
+            ]
+        },
+        "zimage_image_t2i": {
+            "source": "diffusers",
+            "script": "repro_scripts/gen_official_diffusion_gt.py",
+            "outputs": [
+                "zimage_image_t2i_1gpu.jpg"
+            ]
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-04-29T00:57:38.805108+00:00",
+  "commit_sha": "14b4e6fa69234c9ab7ead8862ff7cb40b645d1b8",
+  "run_id": "25085535219",
+  "results": [
+    {
+      "case_id": "flux1_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "task": "text-to-image",
+      "latency_s": 6.692,
+      "error": null
+    },
+    {
+      "case_id": "flux2_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.2-dev",
+      "task": "text-to-image",
+      "latency_s": 22.779,
+      "error": null
+    },
+    {
+      "case_id": "qwen_image_2512_t2i_1024",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-2512",
+      "task": "text-to-image",
+      "latency_s": 13.159,
+      "error": null
+    },
+    {
+      "case_id": "qwen_image_edit_2511",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "task": "image-edit",
+      "latency_s": 23.844,
+      "error": null
+    },
+    {
+      "case_id": "zimage_turbo_t2i_1024",
+      "framework": "sglang",
+      "model": "Tongyi-MAI/Z-Image-Turbo",
+      "task": "text-to-image",
+      "latency_s": 0.885,
+      "error": null
+    },
+    {
+      "case_id": "wan22_t2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-T2V-A14B-Diffusers",
+      "task": "text-to-video",
+      "latency_s": 210.954,
+      "error": null
+    },
+    {
+      "case_id": "wan22_ti2v_5b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "task": "text-image-to-video",
+      "latency_s": 62.201,
+      "error": null
+    },
+    {
+      "case_id": "ltx2_twostage_t2v",
+      "framework": "sglang",
+      "model": "Lightricks/LTX-2",
+      "task": "text-to-video",
+      "latency_s": 11.883,
+      "error": null
+    },
+    {
+      "case_id": "ltx2.3_twostage_ti2v_2gpus",
+      "framework": "sglang",
+      "model": "Lightricks/LTX-2.3",
+      "task": "text-image-to-video",
+      "latency_s": null,
+      "error": "Video generation failed: {'id': '1335dda4-1b16-4676-a5b5-f03909a9068c', 'object': 'video', 'model': 'Lightricks/LTX-2.3', 'status': 'failed', 'progress': 0, 'created_at': 1777428506, 'size': '768x512', 'seconds': '5', 'quality': 'standard', 'url': None, 'remixed_from_video_id': None, 'completed_at': None, 'expires_at': None, 'error': {'message': 'Model generation returned no output. Error from scheduler: Error executing request 1335dda4-1b16-4676-a5b5-f03909a9068c: TypeError: bmm_flop() got multiple values for argument \\'out_shape\\'\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n'}, 'file_path': '/actions-runner/_work/sglang/sglang/outputs/1335dda4-1b16-4676-a5b5-f03909a9068c.mp4', 'file_paths': None, 'num_outputs': None, 'peak_memory_mb': None, 'inference_time_s': None}"
+    },
+    {
+      "case_id": "wan22_i2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "task": "image-to-video",
+      "latency_s": 207.673,
+      "error": null
+    }
+  ]
+}

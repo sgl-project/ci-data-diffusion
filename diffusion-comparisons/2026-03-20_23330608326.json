@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-03-20T06:14:01.408930+00:00",
+  "commit_sha": "479be52b0d7d62d5b4f188a792a8e28321a561b5",
+  "run_id": "23330608326",
+  "results": [
+    {
+      "case_id": "flux1_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "task": "text-to-image",
+      "latency_s": null,
+      "error": "404 Client Error: Not Found for url: http://127.0.0.1:30000/v1/images/generations"
+    },
+    {
+      "case_id": "flux2_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.2-dev",
+      "task": "text-to-image",
+      "latency_s": null,
+      "error": "404 Client Error: Not Found for url: http://127.0.0.1:30000/v1/images/generations"
+    },
+    {
+      "case_id": "qwen_image_2512_t2i_1024",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-2512",
+      "task": "text-to-image",
+      "latency_s": null,
+      "error": "404 Client Error: Not Found for url: http://127.0.0.1:30000/v1/images/generations"
+    },
+    {
+      "case_id": "qwen_image_edit_2511",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "task": "image-edit",
+      "latency_s": null,
+      "error": "404 Client Error: Not Found for url: http://127.0.0.1:30000/v1/images/edits"
+    },
+    {
+      "case_id": "zimage_turbo_t2i_1024",
+      "framework": "sglang",
+      "model": "Tongyi-MAI/Z-Image-Turbo",
+      "task": "text-to-image",
+      "latency_s": 2.307,
+      "error": null
+    },
+    {
+      "case_id": "wan22_t2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-T2V-A14B-Diffusers",
+      "task": "text-to-video",
+      "latency_s": 17.44,
+      "error": null
+    },
+    {
+      "case_id": "wan22_ti2v_5b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "task": "text-image-to-video",
+      "latency_s": null,
+      "error": "Video generation failed: {'id': 'b7bdbc69-0c39-49cc-a065-419468a613f6', 'object': 'video', 'model': 'Wan-AI/Wan2.2-TI2V-5B-Diffusers', 'status': 'failed', 'progress': 0, 'created_at': 1773990678, 'size': '1280x720', 'seconds': '3', 'quality': 'standard', 'url': None, 'remixed_from_video_id': None, 'completed_at': None, 'expires_at': None, 'error': {'message': 'Model generation returned no output. Error from scheduler: Error executing request b7bdbc69-0c39-49cc-a065-419468a613f6: The size of tensor a (45) must match the size of tensor b (44) at non-singleton dimension 3'}, 'file_path': '/actions-runner/_work/sglang/sglang/outputs/b7bdbc69-0c39-49cc-a065-419468a613f6.mp4', 'peak_memory_mb': None, 'inference_time_s': None}"
+    },
+    {
+      "case_id": "wan22_i2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "task": "image-to-video",
+      "latency_s": null,
+      "error": "400 Client Error: Bad Request for url: http://127.0.0.1:30000/v1/videos"
+    },
+    {
+      "case_id": "hunyuanvideo_t2v_480p",
+      "framework": "sglang",
+      "model": "hunyuanvideo-community/HunyuanVideo",
+      "task": "text-to-video",
+      "latency_s": 114.667,
+      "error": null
+    }
+  ]
+}

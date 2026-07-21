@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-04-25T00:54:10.550646+00:00",
+  "commit_sha": "a4facdf3f67bf3dc69d9ab09d4f2df6c123957d7",
+  "run_id": "24918423411",
+  "results": [
+    {
+      "case_id": "flux1_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "task": "text-to-image",
+      "latency_s": null,
+      "error": "500 Server Error: Internal Server Error for url: http://127.0.0.1:30000/v1/images/generations"
+    },
+    {
+      "case_id": "flux2_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.2-dev",
+      "task": "text-to-image",
+      "latency_s": null,
+      "error": "500 Server Error: Internal Server Error for url: http://127.0.0.1:30000/v1/images/generations"
+    },
+    {
+      "case_id": "qwen_image_2512_t2i_1024",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-2512",
+      "task": "text-to-image",
+      "latency_s": null,
+      "error": "500 Server Error: Internal Server Error for url: http://127.0.0.1:30000/v1/images/generations"
+    },
+    {
+      "case_id": "qwen_image_edit_2511",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "task": "image-edit",
+      "latency_s": null,
+      "error": "500 Server Error: Internal Server Error for url: http://127.0.0.1:30000/v1/images/edits"
+    },
+    {
+      "case_id": "zimage_turbo_t2i_1024",
+      "framework": "sglang",
+      "model": "Tongyi-MAI/Z-Image-Turbo",
+      "task": "text-to-image",
+      "latency_s": null,
+      "error": "500 Server Error: Internal Server Error for url: http://127.0.0.1:30000/v1/images/generations"
+    },
+    {
+      "case_id": "wan22_t2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-T2V-A14B-Diffusers",
+      "task": "text-to-video",
+      "latency_s": null,
+      "error": "HTTPConnectionPool(host='127.0.0.1', port=30000): Max retries exceeded with url: /v1/videos (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=30000): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+    },
+    {
+      "case_id": "wan22_ti2v_5b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "task": "text-image-to-video",
+      "latency_s": null,
+      "error": "Video generation failed: {'id': '6b569854-d690-4d92-bed7-123eb515a68d', 'object': 'video', 'model': 'Wan-AI/Wan2.2-TI2V-5B-Diffusers', 'status': 'failed', 'progress': 0, 'created_at': 1777081821, 'size': '1280x720', 'seconds': '3', 'quality': 'standard', 'url': None, 'remixed_from_video_id': None, 'completed_at': None, 'expires_at': None, 'error': {'message': \"Model generation returned no output. Error from scheduler: Error executing request 6b569854-d690-4d92-bed7-123eb515a68d: flash_attn_varlen_func() got an unexpected keyword argument 'out'\"}, 'file_path': '/actions-runner/_work/sglang/sglang/outputs/6b569854-d690-4d92-bed7-123eb515a68d.mp4', 'peak_memory_mb': None, 'inference_time_s': None}"
+    },
+    {
+      "case_id": "ltx2_twostage_t2v",
+      "framework": "sglang",
+      "model": "Lightricks/LTX-2",
+      "task": "text-to-video",
+      "latency_s": null,
+      "error": "Video generation failed: {'id': '7cd185ee-7037-4773-b07b-3b0d341c8ac3', 'object': 'video', 'model': 'Lightricks/LTX-2', 'status': 'failed', 'progress': 0, 'created_at': 1777081984, 'size': '768x512', 'seconds': '5', 'quality': 'standard', 'url': None, 'remixed_from_video_id': None, 'completed_at': None, 'expires_at': None, 'error': {'message': \"Model generation returned no output. Error from scheduler: Error executing request 7cd185ee-7037-4773-b07b-3b0d341c8ac3: flash_attn_varlen_func() got an unexpected keyword argument 'out'\"}, 'file_path': '/actions-runner/_work/sglang/sglang/outputs/7cd185ee-7037-4773-b07b-3b0d341c8ac3.mp4', 'peak_memory_mb': None, 'inference_time_s': None}"
+    },
+    {
+      "case_id": "ltx2.3_twostage_ti2v_2gpus",
+      "framework": "sglang",
+      "model": "Lightricks/LTX-2.3",
+      "task": "text-image-to-video",
+      "latency_s": null,
+      "error": "Video generation failed: {'id': '085cba56-aecf-4bd4-9266-d14efdf2d163', 'object': 'video', 'model': 'Lightricks/LTX-2.3', 'status': 'failed', 'progress': 0, 'created_at': 1777082266, 'size': '768x512', 'seconds': '5', 'quality': 'standard', 'url': None, 'remixed_from_video_id': None, 'completed_at': None, 'expires_at': None, 'error': {'message': \"Model generation returned no output. Error from scheduler: Error executing request 085cba56-aecf-4bd4-9266-d14efdf2d163: flash_attn_varlen_func() got an unexpected keyword argument 'out'\"}, 'file_path': '/actions-runner/_work/sglang/sglang/outputs/085cba56-aecf-4bd4-9266-d14efdf2d163.mp4', 'peak_memory_mb': None, 'inference_time_s': None}"
+    },
+    {
+      "case_id": "wan22_i2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "task": "image-to-video",
+      "latency_s": null,
+      "error": "Server at http://127.0.0.1:30000/health did not start within 2400s"
+    }
+  ]
+}

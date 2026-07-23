@@ -1,82 +1,89 @@
 # SGLang-Diffusion Nightly Performance Dashboard
 
-*Generated: Jul 20 | Commit: `b3570a4`*
+*Generated: Jul 23 | Commit: `b98a577`*
+
+> [!WARNING]
+> **Performance Regression Detected**
+>
+> - **flux1_dev_t2i_1024** (sglang): 4.83s -> 5.27s (+9.1%)
+
 
 ## SGLang-Diffusion Performance
 
 | Model | Risk | sglang (s) |
 |-------|------|---------|
-| FLUX.1-dev | ✅ | **4.83** |
-| FLUX.2-dev | ✅ | **14.33** |
-| Qwen-Image-2512 | ✅ | **8.80** |
-| Qwen-Image-Edit-2511 | ✅ | **15.26** |
-| Z-Image-Turbo | ✅ | **0.81** |
-| Wan2.2-T2V-A14B-Diffusers | ✅ | **210.73** |
-| Wan2.2-TI2V-5B-Diffusers | ✅ | **65.25** |
+| FLUX.1-dev | ⚠️ | **5.27** |
+| FLUX.2-dev | ✅ | **14.51** |
+| Qwen-Image-2512 | ✅ | **8.82** |
+| Qwen-Image-Edit-2511 | ✅ | **15.41** |
+| Z-Image-Turbo | ✅ | **0.83** |
+| Wan2.2-T2V-A14B-Diffusers | ✅ | **210.72** |
+| Wan2.2-TI2V-5B-Diffusers | ✅ | **65.23** |
 | LTX-2.3 | ✅ | **13.06** |
-| ideogram-4-fp8 | ✅ | **5.31** |
-| Cosmos3-Super | ✅ | **115.38** |
-| Wan2.2-I2V-A14B-Diffusers | ✅ | **203.68** |
+| ideogram-4-fp8 | ✅ | **5.33** |
+| Cosmos3-Super | ✅ | **116.40** |
+| Wan2.2-I2V-A14B-Diffusers | ✅ | **205.68** |
 
 ### Latency Trend: flux1_dev_t2i_1024
 
-![Latency Trend flux1_dev_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_flux1_dev_t2i_1024.png)
+![Latency Trend flux1_dev_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_flux1_dev_t2i_1024.png)
 
 
 ### Latency Trend: flux2_dev_t2i_1024
 
-![Latency Trend flux2_dev_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_flux2_dev_t2i_1024.png)
+![Latency Trend flux2_dev_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_flux2_dev_t2i_1024.png)
 
 
 ### Latency Trend: qwen_image_2512_t2i_1024
 
-![Latency Trend qwen_image_2512_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_qwen_image_2512_t2i_1024.png)
+![Latency Trend qwen_image_2512_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_qwen_image_2512_t2i_1024.png)
 
 
 ### Latency Trend: qwen_image_edit_2511
 
-![Latency Trend qwen_image_edit_2511](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_qwen_image_edit_2511.png)
+![Latency Trend qwen_image_edit_2511](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_qwen_image_edit_2511.png)
 
 
 ### Latency Trend: zimage_turbo_t2i_1024
 
-![Latency Trend zimage_turbo_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_zimage_turbo_t2i_1024.png)
+![Latency Trend zimage_turbo_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_zimage_turbo_t2i_1024.png)
 
 
 ### Latency Trend: wan22_t2v_a14b_720p
 
-![Latency Trend wan22_t2v_a14b_720p](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_wan22_t2v_a14b_720p.png)
+![Latency Trend wan22_t2v_a14b_720p](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_wan22_t2v_a14b_720p.png)
 
 
 ### Latency Trend: wan22_ti2v_5b_720p
 
-![Latency Trend wan22_ti2v_5b_720p](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_wan22_ti2v_5b_720p.png)
+![Latency Trend wan22_ti2v_5b_720p](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_wan22_ti2v_5b_720p.png)
 
 
 ### Latency Trend: ltx2.3_twostage_ti2v_2gpus
 
-![Latency Trend ltx2.3_twostage_ti2v_2gpus](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_ltx2.3_twostage_ti2v_2gpus.png)
+![Latency Trend ltx2.3_twostage_ti2v_2gpus](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_ltx2.3_twostage_ti2v_2gpus.png)
 
 
 ### Latency Trend: ideogram4_fp8_t2i_2gpu
 
-![Latency Trend ideogram4_fp8_t2i_2gpu](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_ideogram4_fp8_t2i_2gpu.png)
+![Latency Trend ideogram4_fp8_t2i_2gpu](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_ideogram4_fp8_t2i_2gpu.png)
 
 
 ### Latency Trend: cosmos3_super_t2v_2gpu
 
-![Latency Trend cosmos3_super_t2v_2gpu](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_cosmos3_super_t2v_2gpu.png)
+![Latency Trend cosmos3_super_t2v_2gpu](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_cosmos3_super_t2v_2gpu.png)
 
 
 ### Latency Trend: wan22_i2v_a14b_720p
 
-![Latency Trend wan22_i2v_a14b_720p](https://raw.githubusercontent.com/sgl-project/ci-data/main/diffusion-comparisons/charts/latency_wan22_i2v_a14b_720p.png)
+![Latency Trend wan22_i2v_a14b_720p](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_wan22_i2v_a14b_720p.png)
 
 
 ## SGLang Performance Trend (Last 30 Runs)
 
 | Date | Commit | flux1_dev_t2i_1024 (s) | flux2_dev_t2i_1024 (s) | qwen_image_2512_t2i_1024 (s) | qwen_image_edit_2511 (s) | zimage_turbo_t2i_1024 (s) | wan22_t2v_a14b_720p (s) | wan22_ti2v_5b_720p (s) | ltx2.3_twostage_ti2v_2gpus (s) | ideogram4_fp8_t2i_2gpu (s) | cosmos3_super_t2v_2gpu (s) | wan22_i2v_a14b_720p (s) | Trend |
 |------|--------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|-------|
+| Jul 23 | `b98a577` | 5.27 | 14.51 | 8.82 | 15.41 | 0.83 | 210.72 | 65.23 | 13.06 | 5.33 | 116.40 | 205.68 | :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Jul 20 | `b3570a4` | 4.83 | 14.33 | 8.80 | 15.26 | 0.81 | 210.73 | 65.25 | 13.06 | 5.31 | 115.38 | 203.68 | :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Jul 19 | `99f5a6f` | 4.85 | 14.43 | 10.96 | 15.41 | 0.86 | 210.72 | 65.21 | 16.07 | 5.35 | 115.39 | 203.71 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:   :left_right_arrow:  :left_right_arrow: |
 | Jul 18 | `e48eabb` | 4.86 | 14.41 | 10.86 | 15.41 | 0.83 | 210.72 | 65.23 | 16.08 | N/A | 115.29 | 203.68 | :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:   :left_right_arrow:  :left_right_arrow: |
@@ -105,8 +112,14 @@
 | Jun 28 | `da802dd` | 4.67 | 14.31 | 12.80 | 23.81 | 0.79 | 209.97 | 65.18 | 13.05 | N/A | N/A | 205.57 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_down:    :left_right_arrow: |
 | Jun 27 | `c570130` | 4.76 | 14.37 | 12.80 | 23.72 | 0.75 | 209.20 | 65.23 | 16.07 | 5.25 | 114.52 | 204.58 | :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down:  :arrow_down: |
 | Jun 27 | `528f170` | 10.97 | 24.21 | 26.21 | 36.95 | 13.46 | 221.57 | 70.21 | 40.16 | 11.50 | 143.65 | 211.72 | :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up:  :arrow_up: |
-| Jun 27 | `b78e95c` | 4.68 | 14.31 | 12.81 | 23.77 | 0.65 | 209.17 | 65.22 | 16.06 | 5.19 | 113.80 | 204.59 |      :left_right_arrow:  :left_right_arrow:  :arrow_up:   :left_right_arrow:  :left_right_arrow: |
-| Jun 27 | `a526ca2` | N/A | N/A | N/A | N/A | N/A | 209.33 | 65.19 | 15.05 | N/A | 113.74 | 204.61 | -- |
+| Jun 27 | `b78e95c` | 4.68 | 14.31 | 12.81 | 23.77 | 0.65 | 209.17 | 65.22 | 16.06 | 5.19 | 113.80 | 204.59 | -- |
+
+> [!CAUTION]
+> **Action Required — Performance Alert**
+>
+> The following cases need attention:
+> - flux1_dev_t2i_1024: SGLang regression +8.7% vs 3-run avg (5.27s vs 4.84s)
+
 
 ---
 *Generated by `generate_diffusion_dashboard.py` in SGLang nightly CI.*

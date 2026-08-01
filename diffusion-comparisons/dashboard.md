@@ -1,22 +1,28 @@
 # SGLang-Diffusion Nightly Performance Dashboard
 
-*Generated: Jul 31 | Commit: `5f9b0db`*
+*Generated: Aug 01 | Commit: `ae84811`*
+
+> [!WARNING]
+> **Performance Regression Detected**
+>
+> - **zimage_turbo_t2i_1024** (sglang): 0.82s -> 0.96s (+16.7%)
+
 
 ## SGLang-Diffusion Performance
 
 | Model | Risk | sglang (s) |
 |-------|------|---------|
-| FLUX.1-dev | ✅ | **4.86** |
-| FLUX.2-dev | ✅ | **14.72** |
-| Qwen-Image-2512 | ⚠️ | **10.74** |
-| Qwen-Image-Edit-2511 | ✅ | **15.52** |
-| Z-Image-Turbo | ✅ | **0.82** |
-| Wan2.2-T2V-A14B-Diffusers | ✅ | **208.70** |
-| Wan2.2-TI2V-5B-Diffusers | ✅ | **65.24** |
-| LTX-2.3 | ⚠️ | **16.08** |
-| ideogram-4-fp8 | ✅ | **5.34** |
+| FLUX.1-dev | ✅ | **4.85** |
+| FLUX.2-dev | ✅ | **14.47** |
+| Qwen-Image-2512 | ⚠️ | **11.06** |
+| Qwen-Image-Edit-2511 | ✅ | **15.42** |
+| Z-Image-Turbo | ⚠️ | **0.96** |
+| Wan2.2-T2V-A14B-Diffusers | ✅ | **208.76** |
+| Wan2.2-TI2V-5B-Diffusers | ✅ | **64.22** |
+| LTX-2.3 | ⚠️ | **16.07** |
+| ideogram-4-fp8 | ✅ | **5.36** |
 | Cosmos3-Super | ✅ | **115.41** |
-| Wan2.2-I2V-A14B-Diffusers | ✅ | **202.77** |
+| Wan2.2-I2V-A14B-Diffusers | ✅ | **204.69** |
 
 ### Latency Trend: flux1_dev_t2i_1024
 
@@ -77,6 +83,7 @@
 
 | Date | Commit | flux1_dev_t2i_1024 (s) | flux2_dev_t2i_1024 (s) | qwen_image_2512_t2i_1024 (s) | qwen_image_edit_2511 (s) | zimage_turbo_t2i_1024 (s) | wan22_t2v_a14b_720p (s) | wan22_ti2v_5b_720p (s) | ltx2.3_twostage_ti2v_2gpus (s) | ideogram4_fp8_t2i_2gpu (s) | cosmos3_super_t2v_2gpu (s) | wan22_i2v_a14b_720p (s) | Trend |
 |------|--------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|-------|
+| Aug 01 | `ae84811` | 4.85 | 14.47 | 11.06 | 15.42 | 0.96 | 208.76 | 64.22 | 16.07 | 5.36 | 115.41 | 204.69 | :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Jul 31 | `5f9b0db` | 4.86 | 14.72 | 10.74 | 15.52 | 0.82 | 208.70 | 65.24 | 16.08 | 5.34 | 115.41 | 202.77 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Jul 29 | `e1f2f9d` | 4.87 | 14.49 | 10.53 | 15.42 | 0.82 | 210.65 | 64.21 | 16.07 | 5.37 | 115.32 | 203.71 | :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Jul 27 | `8d6549b` | 4.84 | 14.36 | 8.75 | 15.30 | 0.81 | 210.75 | 64.24 | 13.06 | 5.40 | 115.34 | 204.72 | :arrow_down:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
@@ -105,15 +112,15 @@
 | Jul 02 | `a3f6680` | 4.82 | 14.39 | 12.81 | 25.32 | 0.81 | 210.68 | 65.19 | 13.05 | 5.31 | 115.39 | 204.68 | :left_right_arrow:  :arrow_down:  :left_right_arrow:  :arrow_up:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Jul 01 | `5b76f55` | 4.85 | 15.09 | 12.91 | 23.97 | 1.45 | 210.75 | 65.19 | 16.07 | 5.35 | 115.37 | 204.71 | :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Jun 30 | `bc8b3ab` | 4.89 | 14.49 | 12.90 | 23.80 | 0.82 | 210.72 | 65.25 | 13.06 | 5.33 | 115.36 | 205.74 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_down: |
-| Jun 29 | `abaee46` | 4.87 | 14.49 | 12.85 | 23.66 | 0.83 | 210.57 | 65.18 | 17.07 | 5.35 | 116.32 | 270.90 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up: |
-| Jun 28 | `8648127` | 4.87 | 14.54 | 12.91 | 23.88 | 0.83 | 210.75 | 65.24 | 17.07 | 5.36 | 115.38 | 204.66 | -- |
+| Jun 29 | `abaee46` | 4.87 | 14.49 | 12.85 | 23.66 | 0.83 | 210.57 | 65.18 | 17.07 | 5.35 | 116.32 | 270.90 | -- |
 
 > [!CAUTION]
 > **Action Required — Performance Alert**
 >
 > The following cases need attention:
-> - qwen_image_2512_t2i_1024: SGLang regression +8.2% vs 3-run avg (10.74s vs 9.93s)
-> - ltx2.3_twostage_ti2v_2gpus: SGLang regression +6.7% vs 3-run avg (16.08s vs 15.07s)
+> - qwen_image_2512_t2i_1024: SGLang regression +10.6% vs 3-run avg (11.06s vs 10.01s)
+> - zimage_turbo_t2i_1024: SGLang regression +17.2% vs 3-run avg (0.96s vs 0.82s)
+> - ltx2.3_twostage_ti2v_2gpus: SGLang regression +6.6% vs 3-run avg (16.07s vs 15.07s)
 
 
 ---

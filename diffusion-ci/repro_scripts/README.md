@@ -9,8 +9,14 @@ environment before running gated model cases.
 - `gen_official_diffusion_gt.py`: SGLang helper for official Diffusers and Wan2.1 official-repo generation.
 - `gen_official_wan22_ti2v.py`: Wan2.2 official repo TI2V investigation helper; not mapped to the current comparable GT set.
 - `gen_official_ltx23.py`: LTX official repo generator for the covered LTX-2.3 CI cases; verified on H200 with fp8-cast and inference_mode.
+- `gen_official_pi05_gt.py`: OpenPI PyTorch model-space action generator for the Pi0.5 HTTP consistency case.
 - `run_official_*.sh`: command wrappers for each official source group.
 - `official_repro_case_map.json`: machine-readable case_id -> script mapping.
+
+For Pi0.5, run `gen_official_pi05_gt.py` from OpenPI revision
+`15a9616a00943ada6c20a0f158e3adb39df2ccac`. The script pins the LeRobot
+checkpoint revision in its output provenance and compares normalized model-space
+actions, before robot-specific action unnormalization or horizon slicing.
 
 ## Case Map
 
@@ -28,6 +34,7 @@ environment before running gated model cases.
 | `ltx_2.3_one_stage_ti2v` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | Official GT regenerated successfully on H200; still below current strict thresholds. |
 | `ltx_2.3_two_stage_t2v_2gpus` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | Official GT restored; script path is comparable but native alignment is still poor. |
 | `ltx_2_3_hq_pipeline` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | Official HQ two-stage TI2V path: CI prompt, CI reference image, 1920x1088, 24 frames, 15 steps. |
+| `pi05_action_http` | `official_comparable` | `gen_official_pi05_gt.py` | `-` | OpenPI PyTorch at the pinned revision, using the same deterministic model-space observation and noise as CI. |
 | `qwen_image_edit_2509_ti2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | Official reference refreshed with current official Diffusers script. |
 | `qwen_image_edit_2511_ti2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | - |
 | `qwen_image_edit_ti2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | - |

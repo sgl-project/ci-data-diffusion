@@ -103,6 +103,13 @@
                 "ltx_2_3_hq_pipeline_1gpu_frame_last.png"
             ]
         },
+        "pi05_action_http": {
+            "source": "openpi_pytorch",
+            "script": "repro_scripts/gen_official_pi05_gt.py",
+            "outputs": [
+                "pi05_action_http_1gpu.json"
+            ]
+        },
         "zimage_image_t2i": {
             "source": "diffusers",
             "script": "repro_scripts/gen_official_diffusion_gt.py",

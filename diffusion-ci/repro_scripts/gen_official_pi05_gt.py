@@ -29,7 +29,7 @@ CAMERA_ORDER = ("base_0_rgb", "left_wrist_0_rgb", "right_wrist_0_rgb")
 PROMPT = "pick up the blue block"
 ACTION_HORIZON = 50
 ACTION_DIM = 32
-NUM_STEPS = 2
+DEFAULT_NUM_STEPS = 2
 
 
 def make_image(camera_index: int, size: int = 64) -> np.ndarray:
@@ -69,7 +69,7 @@ def build_model_observation(device: str) -> openpi_model.Observation:
     return openpi_model.Observation.from_dict(torch_inputs)
 
 
-def load_policy(device: str):
+def load_policy(device: str, num_steps: int):
     checkpoint = snapshot_download(
         repo_id=CHECKPOINT_REPO,
         revision=CHECKPOINT_REVISION,
@@ -85,7 +85,7 @@ def load_policy(device: str):
     return policy_config.create_trained_policy(
         train_config,
         checkpoint,
-        sample_kwargs={"num_steps": NUM_STEPS},
+        sample_kwargs={"num_steps": num_steps},
         norm_stats=openpi_checkpoints.load_norm_stats(assets, "trossen"),
         pytorch_device=device,
     )
@@ -99,9 +99,14 @@ def main() -> None:
         default=Path("pi05_action_http_1gpu.json"),
     )
     parser.add_argument("--device", default="cuda")
+    parser.add_argument(
+        "--num-inference-steps",
+        type=int,
+        default=DEFAULT_NUM_STEPS,
+    )
     args = parser.parse_args()
 
-    policy = load_policy(args.device)
+    policy = load_policy(args.device, args.num_inference_steps)
     observation = build_model_observation(args.device)
     noise = np.random.default_rng(0).standard_normal(
         (ACTION_HORIZON, ACTION_DIM)
@@ -134,7 +139,7 @@ def main() -> None:
             "checkpoint_revision": CHECKPOINT_REVISION,
             "model_space": True,
             "noise_seed": 0,
-            "num_inference_steps": NUM_STEPS,
+            "num_inference_steps": args.num_inference_steps,
         },
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

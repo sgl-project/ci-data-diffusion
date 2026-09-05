@@ -1,23 +1,38 @@
 # SGLang-Diffusion Nightly Performance Dashboard
 
-*Generated: Sep 01 | Commit: `00689c0`*
+*Generated: Sep 05 | Commit: `dc28438`*
 
 ## SGLang-Diffusion Performance
 
-| Model | Risk | sglang (s) |
-|-------|------|---------|
-| FLUX.1-dev | ✅ | **4.65** |
-| FLUX.2-dev | ✅ | **13.70** |
-| Qwen-Image-2512 | ✅ | **9.95** |
-| Qwen-Image-Edit-2511 | ✅ | **16.95** |
-| Z-Image-Turbo | ✅ | **0.97** |
-| Wan2.2-T2V-A14B-Diffusers | ✅ | **206.71** |
-| Wan2.2-TI2V-5B-Diffusers | ✅ | **57.21** |
-| LTX-2.3 | ⚠️ | **17.09** |
-| ideogram-4-fp8 | ✅ | **4.06** |
-| Cosmos3-Super | ✅ | **121.35** |
-| Wan2.2-I2V-A14B-Diffusers | ✅ | **201.69** |
-| MiniMax-H3 | ✅ | **77.27** |
+| Model | Risk | Samples | sglang median (s) |
+|-------|------|---------|---------|
+| FLUX.1-dev | ✅ | 3 | **4.52** |
+| FLUX.2-dev | ✅ | 3 | **13.32** |
+| Qwen-Image-2512 | ✅ | 3 | **8.51** |
+| Qwen-Image-Edit-2511 | ✅ | 3 | **15.13** |
+| Z-Image-Turbo | ✅ | 3 | **0.77** |
+| Wan2.2-T2V-A14B-Diffusers | ✅ | 3 | **207.69** |
+| Wan2.2-TI2V-5B-Diffusers | ✅ | 3 | **56.16** |
+| LTX-2.3 | ❌ | N/A | N/A |
+| ideogram-4-fp8 | ✅ | 3 | **3.84** |
+| Cosmos3-Super | ✅ | 3 | **119.39** |
+| Wan2.2-I2V-A14B-Diffusers | ❌ | N/A | N/A |
+| MiniMax-H3 | ✅ | 3 | **78.22** |
+
+## SGLang Server-Side Breakdown
+
+| Model | Server total (s) | Text encode (s) | Denoise (s) | Decode (s) | Median denoise step (ms) |
+|-------|------------------|-----------------|--------------|------------|---------------------------|
+| FLUX.1-dev | 4.27 | 0.04 | 4.06 | 0.02 | 81.72 |
+| FLUX.2-dev | 13.20 | 0.36 | 12.38 | 0.01 | 247.18 |
+| Qwen-Image-2512 | 8.44 | 0.23 | 8.14 | 0.05 | 163.59 |
+| Qwen-Image-Edit-2511 | 15.06 | N/A | 14.31 | 0.09 | 359.39 |
+| Z-Image-Turbo | 0.63 | 0.13 | 0.49 | 0.01 | 56.69 |
+| Wan2.2-T2V-A14B-Diffusers | 206.92 | 0.13 | 204.08 | 2.30 | 5099.69 |
+| Wan2.2-TI2V-5B-Diffusers | 54.26 | 0.33 | 48.34 | 5.55 | 975.32 |
+| ideogram-4-fp8 | 3.74 | 0.13 | 3.52 | 0.08 | 179.51 |
+| Cosmos3-Super | 118.54 | 0.00 | 115.42 | 2.40 | N/A |
+| MiniMax-H3 | 76.72 | 0.05 | 74.06 | 1.31 | 1536.19 |
 
 ### Latency Trend: flux1_dev_t2i_1024
 
@@ -83,8 +98,9 @@
 
 | Date | Commit | flux1_dev_t2i_1024 (s) | flux2_dev_t2i_1024 (s) | qwen_image_2512_t2i_1024 (s) | qwen_image_edit_2511 (s) | zimage_turbo_t2i_1024 (s) | wan22_t2v_a14b_720p (s) | wan22_ti2v_5b_720p (s) | ltx2.3_twostage_ti2v_2gpus (s) | ideogram4_fp8_t2i_2gpu (s) | cosmos3_super_t2v_2gpu (s) | wan22_i2v_a14b_720p (s) | minimax_h3_t2va_5s (s) | Trend |
 |------|--------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|-------|
-| Sep 01 | `00689c0` | 4.65 | 13.70 | 9.95 | 16.95 | 0.97 | 206.71 | 57.21 | 17.09 | 4.06 | 121.35 | 201.69 | 77.27 |            |
+| Sep 05 | `dc28438` | 4.52 | 13.32 | 8.51 | 15.13 | 0.77 | 207.69 | 56.16 | N/A | 3.84 | 119.39 | N/A | 78.22 |            |
 |  | `?` | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |            |
+| Sep 01 | `00689c0` | 4.65 | 13.70 | 9.95 | 16.95 | 0.97 | 206.71 | 57.21 | 17.09 | 4.06 | 121.35 | 201.69 | 77.27 | :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Aug 31 | `52e1c24` | 4.63 | 13.59 | 8.74 | 16.81 | 0.95 | 207.67 | 57.17 | 14.06 | 4.25 | 120.38 | 201.71 | 77.24 | :arrow_down:  :left_right_arrow:  :arrow_down:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Aug 29 | `cdbfe90` | 5.13 | 13.71 | 10.59 | 16.00 | 0.96 | 206.73 | 57.16 | 17.07 | 4.15 | 120.40 | 202.66 | 77.23 | :arrow_up:  :left_right_arrow:  :arrow_up:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Aug 27 | `20a491d` | 4.58 | 13.49 | 8.90 | 15.26 | 0.95 | 206.73 | 56.17 | 14.06 | 4.12 | 119.41 | 200.67 | 77.26 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
@@ -111,14 +127,14 @@
 | Jul 27 | `8d6549b` | 4.84 | 14.36 | 8.75 | 15.30 | 0.81 | 210.75 | 64.24 | 13.06 | 5.40 | 115.34 | 204.72 | N/A | :arrow_down:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  |
 | Jul 25 | `e943e60` | 4.95 | 14.46 | 10.50 | 15.44 | 0.83 | 211.76 | 65.23 | 16.08 | 5.35 | 116.35 | 205.66 | N/A | :arrow_down:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  |
 | Jul 23 | `b98a577` | 5.27 | 14.51 | 8.82 | 15.41 | 0.83 | 210.72 | 65.23 | 13.06 | 5.33 | 116.40 | 205.68 | N/A | :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  |
-| Jul 20 | `b3570a4` | 4.83 | 14.33 | 8.80 | 15.26 | 0.81 | 210.73 | 65.25 | 13.06 | 5.31 | 115.38 | 203.68 | N/A | :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  |
-| Jul 19 | `99f5a6f` | 4.85 | 14.43 | 10.96 | 15.41 | 0.86 | 210.72 | 65.21 | 16.07 | 5.35 | 115.39 | 203.71 | N/A | -- |
+| Jul 20 | `b3570a4` | 4.83 | 14.33 | 8.80 | 15.26 | 0.81 | 210.73 | 65.25 | 13.06 | 5.31 | 115.38 | 203.68 | N/A | -- |
 
 > [!CAUTION]
 > **Action Required — Performance Alert**
 >
 > The following cases need attention:
-> - ltx2.3_twostage_ti2v_2gpus: SGLang regression +9.8% vs 3-run avg (17.09s vs 15.56s)
+> - ltx2.3_twostage_ti2v_2gpus: SGLang latency is N/A (broken)
+> - wan22_i2v_a14b_720p: SGLang latency is N/A (broken)
 
 
 ---

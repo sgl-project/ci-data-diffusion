@@ -1,0 +1,193 @@
+{
+  "case_id": "minimax_h3_ref2va_video_audio_2gpu_h100",
+  "platform": "h100",
+  "num_gpus": 2,
+  "sglang_pr": 38671,
+  "source": "H100 CI generated frames; corrected inference step-count contract",
+  "sglang_head": "dd2b83b16abec0eeae2d92f5c4bcd53500a78e4c",
+  "model": "MiniMaxAI/MiniMax-H3",
+  "model_revision": "42ed227ee7df40d41602854ae760620d6eb651fe",
+  "sglang_ci_merge": "d85b6dde9d16da4c771739f9dfcb00e1d76fe899",
+  "ci_run_id": 37765026897,
+  "ci_job_id": 113270756398,
+  "ci_run_attempt": 1,
+  "artifact_id": 11548832065,
+  "artifact_name": "diffusion-failures-2gpu-2-1",
+  "artifact_zip_sha256": "cc32ff4db3613e9868defe16a3c2dfb05219f19ecc62d013a6e2d0129b4f4b0e",
+  "artifact_source_directory": "request-1/consistency_failures/generated",
+  "request_2_identical_file_hashes": true,
+  "previous_gt_revision": "73f6c5125896af7488eb5d8df48cd155cd352530",
+  "previous_gt_generation": {
+    "run_id": 36597643222,
+    "job_id": 109506691186,
+    "gt_commit": "e4ecc89babd228da083f2403b4a25eaa82eb708a",
+    "source_sha": "2e7e0b897c",
+    "requested_steps": 8,
+    "sigma_points": 8,
+    "actual_updates": 7
+  },
+  "request": {
+    "seed": 42,
+    "width": 1344,
+    "height": 768,
+    "duration_seconds": 4.0,
+    "num_inference_steps": 8,
+    "actual_denoising_updates": 8,
+    "flow_shift": 12.0,
+    "audio_flow_shift": 3.0,
+    "quality": "exact"
+  },
+  "independent_scheduler_reference": {
+    "repository": "huggingface/diffusers",
+    "revision": "d961a388fd02e4db38d17350c8dd9b8abe642e05",
+    "path": "src/diffusers/schedulers/scheduling_minimax_h3.py",
+    "reference_grid_points": "requested NFE + 1",
+    "cuda_cases": [
+      {
+        "steps": 1,
+        "shift": 3.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 1,
+        "shift": 6.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 1,
+        "shift": 12.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 2,
+        "shift": 3.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 2,
+        "shift": 6.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 2,
+        "shift": 12.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 7,
+        "shift": 3.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 7,
+        "shift": 6.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 7,
+        "shift": 12.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 8,
+        "shift": 3.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 8,
+        "shift": 6.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 8,
+        "shift": 12.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 10,
+        "shift": 3.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 10,
+        "shift": 6.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 10,
+        "shift": 12.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 50,
+        "shift": 3.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 50,
+        "shift": 6.0,
+        "max_abs_error": 0.0
+      },
+      {
+        "steps": 50,
+        "shift": 12.0,
+        "max_abs_error": 0.0
+      }
+    ]
+  },
+  "full_model_validation": {
+    "source_sha": "dd2b83b16abec0eeae2d92f5c4bcd53500a78e4c",
+    "model_revision": "42ed227ee7df40d41602854ae760620d6eb651fe",
+    "gpu": "NVIDIA H200",
+    "torch_version": "2.14.1+cu130",
+    "nfe": 8,
+    "reference_grid_points": 9,
+    "seed": 42,
+    "width": 672,
+    "height": 384,
+    "duration_seconds": 4.0,
+    "frame_shape": [
+      107,
+      384,
+      672,
+      3
+    ],
+    "audio_shape": [
+      2,
+      142400
+    ],
+    "frames_sha256": "a3d7189424bf0fc60b27e99ad623aa1977e7e3e2721b379c7ce73c33279ad8da",
+    "video_exact_match": true,
+    "audio_exact_match": false,
+    "reference_audio_equals_native_repeat": true,
+    "audio_metrics": {
+      "reference_grid9": {
+        "audio_max_abs": 1.9255094230175018e-07,
+        "audio_rmse": 1.816748529392953e-08
+      },
+      "native_repeat": {
+        "audio_max_abs": 1.9255094230175018e-07,
+        "audio_rmse": 1.816748529392953e-08
+      }
+    },
+    "scope": "Same native engine with independently generated reference sigma grids. First-request float audio differs from both subsequent requests; reference-grid audio and native-repeat audio are bitwise equal."
+  },
+  "previous_failure": {
+    "min_clip_similarity": 0.892302,
+    "min_ssim": 0.689509,
+    "min_psnr": 23.305418,
+    "max_mean_abs_diff": 5.602567
+  },
+  "frames": {
+    "minimax_h3_ref2va_video_audio_2gpu_h100_2gpu_frame_0.png": {
+      "file_sha256": "c57c1211b32183091d3ead8ae2425a1eb6cf3c8df702889c386634f953dffa80"
+    },
+    "minimax_h3_ref2va_video_audio_2gpu_h100_2gpu_frame_mid.png": {
+      "file_sha256": "be8fbf96bbde8fceebbf786181a536c04c0d7941ed89f6234a1f2af5726730f8"
+    },
+    "minimax_h3_ref2va_video_audio_2gpu_h100_2gpu_frame_last.png": {
+      "file_sha256": "50db52dafc3152c017ca650bd5321fadadf44d831edaf5d1abd93d66f1046d3a"
+    }
+  },
+  "scope": "Three decoded video PNGs only. Audio GT and all thresholds unchanged. Full-model validation compares schedules in the native engine, not two independent engines."
+}

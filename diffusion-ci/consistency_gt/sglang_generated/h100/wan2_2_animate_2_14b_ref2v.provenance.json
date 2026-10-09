@@ -1,0 +1,20 @@
+{
+  "source": "Actual generated frames from H100 CI failure artifact, accepted as the new regression baseline",
+  "source_run": "https://github.com/sgl-project/sglang/actions/runs/37889108770",
+  "artifact_id": 11599479672,
+  "sglang_head": "fb9866f7366b9458a3b3b5b74e0edf0afbff9393",
+  "case_id": "wan2_2_animate_2_14b_ref2v",
+  "num_gpus": 1,
+  "previous_gt_revision": "60e8e8908055d06855bc9239a6ecda18d2ce0d1d",
+  "model": "Wan-AI/Wan2.2-Animate-2-14B-Diffusers",
+  "model_revision": "7d48412d7b903ff3a89f4f5a960d99e1899605a1",
+  "seed": 42,
+  "num_inference_steps": 8,
+  "quality": "exact",
+  "sha256": {
+    "wan2_2_animate_2_14b_ref2v_1gpu_frame_0.png": "cf9b53472b3bb2337514277e445e43ee68703444cc6647931d36773aff8b0b33",
+    "wan2_2_animate_2_14b_ref2v_1gpu_frame_mid.png": "2235c7051d3ed8ecaf29a5ad17c308886a9e29332a529d21ef18e4794802db08",
+    "wan2_2_animate_2_14b_ref2v_1gpu_frame_last.png": "9dbf51bc3db1f5c77f3ed604fdbb51b3525d2fc6286335b73734fa530665ae7e"
+  },
+  "scope": "Only the three video reference frames; thresholds unchanged. Old GT generation mismatch remains unexplained; this refresh is not proof of official numerical parity."
+}

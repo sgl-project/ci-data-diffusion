@@ -2,5 +2,22 @@
   "restored_from_revision": "972007201d82d7dcce9e35b7e4b151c2b1181c30",
   "reason": "Main's legacy H3 schedule executes seven updates for num_inference_steps=8. The corrected eight-update references remain available at the immutable PR #38671 pin.",
   "num_inference_steps": 8,
-  "actual_denoise_updates": 7
+  "actual_denoise_updates": 7,
+  "audio_ground_truth": {
+    "source_sha": "7f95dfe60391cb488c3a71ca8f719d3f379fe2c0",
+    "run_id": 37947049708,
+    "job_id": 113876053266,
+    "runner": "h100-novita9-gpu-45",
+    "model_snapshot_observed": "0e7419c295ff001063623bc725abf55c544deb15",
+    "requested_steps": 8,
+    "seed": 42,
+    "size": "1344x768",
+    "seconds": 4,
+    "flow_shift": 12,
+    "audio_flow_shift": 3,
+    "quality": "exact",
+    "successful_requests": 2,
+    "artifact_sha256": "eec2c899b058491e7ca8fef8d54ba006a388653c20f41599c54b4722d491fd80",
+    "reason": "OldaudioGT follows7updates; correctnative8stepsandH200control justify refresh. Publisherpreviously omittedWAV. H200controlmodel42ed documentedseparately, notclaimedbitidentity."
+  }
 }

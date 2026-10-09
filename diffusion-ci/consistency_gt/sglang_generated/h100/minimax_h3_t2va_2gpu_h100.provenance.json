@@ -1,0 +1,6 @@
+{
+  "restored_from_revision": "972007201d82d7dcce9e35b7e4b151c2b1181c30",
+  "reason": "Main's legacy H3 schedule executes seven updates for num_inference_steps=8. The corrected eight-update references remain available at the immutable PR #38671 pin.",
+  "num_inference_steps": 8,
+  "actual_denoise_updates": 7
+}

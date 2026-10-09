@@ -1,61 +1,6 @@
 {
-  "case_id": "minimax_h3_t2va_consumer_budget_1gpu_5090",
-  "platform": "5090",
-  "num_gpus": 1,
-  "source": "SGLang CI generated frames; human-authorized refresh for corrected inference step count",
-  "sglang_pr": 38671,
-  "sglang_head": "cf296772db6e6d4f152349523c4141ed7793c82d",
-  "sglang_ci_merge": "86f3c3f6597240d05eb79fae0868756627cf2a05",
-  "ci_run_id": 37559985542,
-  "ci_run_attempt": 2,
-  "ci_job_id": 112595311061,
-  "runner": "5090-c-runner-1",
-  "artifact_id": 11456908107,
-  "artifact_name": "diffusion-failures-5090-2",
-  "artifact_created_at": "2026-10-07T02:23:32Z",
-  "artifact_zip_sha256": "f8df53e8f9cbd0b896b761c709104149bddd98524b443f036e576587c40696ac",
-  "report_artifact_id": 11456903202,
-  "report_artifact_zip_sha256": "7abcc38bf4c782886dde10b962015fb3a6663f8314f8ff57166579cf602539b0",
-  "artifact_source_directory": "request-1/consistency_failures/generated",
-  "request_2_identical_file_and_rgb_hashes": true,
-  "previous_gt_revision": "972007201d82d7dcce9e35b7e4b151c2b1181c30",
-  "model": "MiniMaxAI/MiniMax-H3",
-  "model_revision": "42ed227ee7df40d41602854ae760620d6eb651fe",
-  "request": {
-    "prompt": "A cat walking on a sunny beach, gentle waves, soft camera pan.",
-    "task": "t2va",
-    "variant": "fl2va",
-    "seed": 1101,
-    "width": 672,
-    "height": 384,
-    "duration_seconds": 4.0,
-    "num_inference_steps": 8,
-    "actual_denoising_updates": 8,
-    "flow_shift": 12.0,
-    "audio_flow_shift": 3.0,
-    "quality": "exact",
-    "output_format": "mp4"
-  },
-  "configuration": {
-    "performance_mode": "memory",
-    "layerwise_offload_components": ["dit", "text_encoder", "vae"],
-    "video_vae_resident_layers": 36,
-    "simulated_device_memory_gib": 12,
-    "simulated_host_memory_gib": 32
-  },
-  "frames": {
-    "minimax_h3_t2va_consumer_budget_1gpu_5090_1gpu_frame_0.png": {
-      "file_sha256": "45334101df91fd8f1cd78b95dcea6356f29072f55d1023f52f171dce25f91dfc",
-      "rgb_sha256": "a6918d55a1b3ba42d3a425eefb5d7de9fc167c0f4a66d94ea175543ef9919764"
-    },
-    "minimax_h3_t2va_consumer_budget_1gpu_5090_1gpu_frame_mid.png": {
-      "file_sha256": "1cb6da47f380f8b585e1a61d884ec5b7bc181e95be89ab0a2d65d56077bf98fd",
-      "rgb_sha256": "efa752c3eabd5534a262ef3ee14ca14da03ac35579d2dc4f3d0732de7ee680f6"
-    },
-    "minimax_h3_t2va_consumer_budget_1gpu_5090_1gpu_frame_last.png": {
-      "file_sha256": "7143f2b167c8f94e7ed36ab504299843b000a829ae0127368923f15030dbfa11",
-      "rgb_sha256": "839cae5e689d49ad565dcbaca0b14ee024e8644b51500685c5960e5490b4bbbf"
-    }
-  },
-  "scope": "Three decoded video PNGs only; audio GT and all thresholds unchanged. No independent full-model correctness or performance claim."
+  "restored_from_revision": "972007201d82d7dcce9e35b7e4b151c2b1181c30",
+  "reason": "Main's legacy H3 schedule executes seven updates for num_inference_steps=8. The corrected eight-update references remain available at the immutable PR #38671 pin.",
+  "num_inference_steps": 8,
+  "actual_denoise_updates": 7
 }

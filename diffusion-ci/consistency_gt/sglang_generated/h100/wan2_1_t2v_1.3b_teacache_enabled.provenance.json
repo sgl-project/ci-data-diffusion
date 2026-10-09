@@ -1,0 +1,39 @@
+{
+  "source": "H100 generated frames from CI failure artifact; regression baseline for corrected TeaCache semantics",
+  "sglang_pr": 42422,
+  "sglang_head": "57053ea1fab10c3a2d27da9a0e594d264c1c28c8",
+  "source_run": "https://github.com/sgl-project/sglang/actions/runs/37882257676",
+  "source_job": 113664536933,
+  "artifact_id": 11598032368,
+  "artifact_name": "diffusion-failures-1gpu-3-1",
+  "case_id": "wan2_1_t2v_1.3b_teacache_enabled",
+  "previous_gt_revision": "972007201d82d7dcce9e35b7e4b151c2b1181c30",
+  "model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "model_revision": "0fad780a534b6463e45facd96134c9f345acfa5b",
+  "gpu": "H100",
+  "num_gpus": 1,
+  "width": 832,
+  "height": 480,
+  "requested_num_frames": 24,
+  "seed": 42,
+  "num_inference_steps": 50,
+  "guidance_scale": 3.0,
+  "flow_shift": 3.0,
+  "quality": "exact",
+  "enable_teacache": true,
+  "attention_backend": "fa",
+  "torch": "2.14.1",
+  "cuda": "13.0",
+  "diffusers": "0.37.0",
+  "transformers": "5.19.0",
+  "sha256": {
+    "wan2_1_t2v_1.3b_teacache_enabled_1gpu_frame_0.png": "4fd1a818e97a1d67ec6abd0f1b1f2de6fc646ae660764affa8e99455eac78841",
+    "wan2_1_t2v_1.3b_teacache_enabled_1gpu_frame_mid.png": "28bb61a105964a2f84f00e0e04991629b47600c832baa9301e73067431d87d78",
+    "wan2_1_t2v_1.3b_teacache_enabled_1gpu_frame_last.png": "70202c5c5288d9001c0f43326e7dd90b1d1e06b2a7e089584422a54029461366"
+  },
+  "validation": {
+    "h100": "One CI output; its reported comparison metrics were independently reproduced from artifact images. No repeated H100 request experiment.",
+    "h200": "Same-GPU main-parent/PR A/B: no-cache outputs bit-identical; PR target frames and final latent bit-identical across repeats, changed-shape history, cache toggles and simulated no-cache warmup. PR three-frame mean PSNR versus no-cache improved from 25.39 to 28.25 dB for this single prompt.",
+    "scope": "Only this H100 TeaCache regression baseline. Thresholds and official GT unchanged. H200 validation images are not used as GT. Isolated revision until the TeaCache fix is merged."
+  }
+}

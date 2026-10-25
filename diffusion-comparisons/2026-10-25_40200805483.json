@@ -1,0 +1,559 @@
+{
+  "timestamp": "2026-10-25T14:08:43.260201+00:00",
+  "commit_sha": "a99c7d050faee00b104a0b861df2d394ded74eb6",
+  "run_id": "40200805483",
+  "methodology": "client-e2e-v1",
+  "measurement_repeats": 3,
+  "warmup_requests": 1,
+  "results": [
+    {
+      "case_id": "anima_base_t2i_1024",
+      "framework": "sglang",
+      "model": "circlestone-labs/Anima-Base-v1.0-Diffusers",
+      "task": "text-to-image",
+      "methodology": "client-e2e-v1",
+      "latency_s": 2.463,
+      "latency_samples_s": [
+        2.463,
+        2.457,
+        2.463
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 2.64,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.046,
+        "TextEncodingStage": 198.595,
+        "AnimaTextConditioningStage": 15.703,
+        "TimestepPreparationStage": 0.322,
+        "LatentPreparationStage": 0.094,
+        "DenoisingStage": 2180.893,
+        "DecodingStage": 222.707
+      },
+      "server_latency_samples_s": [
+        2.445,
+        2.444,
+        2.451
+      ],
+      "server_latency_s": 2.445,
+      "server_stage_medians_ms": {
+        "AnimaTextConditioningStage": 9.325,
+        "DecodingStage": 222.665,
+        "DenoisingStage": 2188.698,
+        "InputValidationStage": 0.029,
+        "LatentPreparationStage": 0.077,
+        "TextEncodingStage": 21.168,
+        "TimestepPreparationStage": 0.276
+      },
+      "median_denoise_step_ms": 73.496
+    },
+    {
+      "case_id": "flux1_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "task": "text-to-image",
+      "methodology": "client-e2e-v1",
+      "latency_s": 4.111,
+      "latency_samples_s": [
+        4.111,
+        4.103,
+        4.125
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 4.087,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.062,
+        "TextEncodingStage": 24.333,
+        "LatentPreparationStage": 0.204,
+        "TimestepPreparationStage": 0.445,
+        "DenoisingStage": 3946.364,
+        "DecodingStage": 8.869
+      },
+      "server_latency_samples_s": [
+        4.01,
+        4.007,
+        4.028
+      ],
+      "server_latency_s": 4.01,
+      "server_stage_medians_ms": {
+        "DecodingStage": 8.818,
+        "DenoisingStage": 3975.072,
+        "InputValidationStage": 0.035,
+        "LatentPreparationStage": 0.149,
+        "TextEncodingStage": 21.853,
+        "TimestepPreparationStage": 0.418
+      },
+      "median_denoise_step_ms": 80.102
+    },
+    {
+      "case_id": "flux2_dev_t2i_1024",
+      "framework": "sglang",
+      "model": "black-forest-labs/FLUX.2-dev",
+      "task": "text-to-image",
+      "methodology": "client-e2e-v1",
+      "latency_s": 12.915,
+      "latency_samples_s": [
+        12.947,
+        12.915,
+        12.906
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 13.224,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.057,
+        "TextEncodingStage": 476.342,
+        "ImageVAEEncodingStage": 0.006,
+        "LatentPreparationStage": 0.567,
+        "TimestepPreparationStage": 0.509,
+        "DenoisingStage": 12336.033,
+        "DecodingStage": 9.451
+      },
+      "server_latency_samples_s": [
+        12.907,
+        12.874,
+        12.866
+      ],
+      "server_latency_s": 12.874,
+      "server_stage_medians_ms": {
+        "DecodingStage": 9.517,
+        "DenoisingStage": 12050.549,
+        "ImageVAEEncodingStage": 0.004,
+        "InputValidationStage": 0.038,
+        "LatentPreparationStage": 0.453,
+        "TextEncodingStage": 364.172,
+        "TimestepPreparationStage": 0.489
+      },
+      "median_denoise_step_ms": 241.011
+    },
+    {
+      "case_id": "qwen_image_2512_t2i_1024",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-2512",
+      "task": "text-to-image",
+      "methodology": "client-e2e-v1",
+      "latency_s": 7.68,
+      "latency_samples_s": [
+        7.674,
+        7.684,
+        7.68
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 7.72,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.071,
+        "TextEncodingStage": 28.922,
+        "LatentPreparationStage": 0.217,
+        "TimestepPreparationStage": 0.532,
+        "DenoisingStage": 7565.174,
+        "DecodingStage": 68.316
+      },
+      "server_latency_samples_s": [
+        7.571,
+        7.581,
+        7.579
+      ],
+      "server_latency_s": 7.579,
+      "server_stage_medians_ms": {
+        "DecodingStage": 8.999,
+        "DenoisingStage": 7537.005,
+        "InputValidationStage": 0.036,
+        "LatentPreparationStage": 0.163,
+        "TextEncodingStage": 27.604,
+        "TimestepPreparationStage": 0.458
+      },
+      "median_denoise_step_ms": 151.162
+    },
+    {
+      "case_id": "qwen_image_edit_2511",
+      "framework": "sglang",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "task": "image-edit",
+      "methodology": "client-e2e-v1",
+      "latency_s": 13.921,
+      "latency_samples_s": [
+        13.946,
+        13.921,
+        13.849
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 14.039,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 210.82,
+        "ImageEncodingStage": 121.906,
+        "ImageVAEEncodingStage": 47.547,
+        "LatentPreparationStage": 0.158,
+        "TimestepPreparationStage": 0.452,
+        "DenoisingStage": 13478.963,
+        "DecodingStage": 18.472
+      },
+      "server_latency_samples_s": [
+        13.799,
+        13.77,
+        13.702
+      ],
+      "server_latency_s": 13.77,
+      "server_stage_medians_ms": {
+        "DecodingStage": 19.511,
+        "DenoisingStage": 13503.717,
+        "ImageEncodingStage": 154.988,
+        "ImageVAEEncodingStage": 7.661,
+        "InputValidationStage": 34.776,
+        "LatentPreparationStage": 0.148,
+        "TimestepPreparationStage": 0.437
+      },
+      "median_denoise_step_ms": 339.838
+    },
+    {
+      "case_id": "zimage_turbo_t2i_1024",
+      "framework": "sglang",
+      "model": "Tongyi-MAI/Z-Image-Turbo",
+      "task": "text-to-image",
+      "methodology": "client-e2e-v1",
+      "latency_s": 0.586,
+      "latency_samples_s": [
+        0.586,
+        0.588,
+        0.584
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 0.593,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.057,
+        "TextEncodingStage": 43.871,
+        "LatentPreparationStage": 0.102,
+        "TimestepPreparationStage": 0.306,
+        "DenoisingStage": 432.146,
+        "DecodingStage": 13.853
+      },
+      "server_latency_samples_s": [
+        0.493,
+        0.495,
+        0.491
+      ],
+      "server_latency_s": 0.493,
+      "server_stage_medians_ms": {
+        "DecodingStage": 14.441,
+        "DenoisingStage": 438.761,
+        "InputValidationStage": 0.026,
+        "LatentPreparationStage": 0.077,
+        "TextEncodingStage": 35.331,
+        "TimestepPreparationStage": 0.248
+      },
+      "median_denoise_step_ms": 55.738
+    },
+    {
+      "case_id": "wan22_t2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-T2V-A14B-Diffusers",
+      "task": "text-to-video",
+      "methodology": "client-e2e-v1",
+      "latency_s": 201.514,
+      "latency_samples_s": [
+        201.514,
+        201.391,
+        201.637
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 201.289,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.046,
+        "TextEncodingStage": 271.089,
+        "LatentPreparationStage": 0.237,
+        "TimestepPreparationStage": 0.34,
+        "DenoisingStage": 198685.544,
+        "DecodingStage": 1928.695
+      },
+      "server_latency_samples_s": [
+        201.46,
+        201.323,
+        201.522
+      ],
+      "server_latency_s": 201.46,
+      "server_stage_medians_ms": {
+        "DecodingStage": 1797.011,
+        "DenoisingStage": 198937.716,
+        "InputValidationStage": 0.036,
+        "LatentPreparationStage": 0.272,
+        "TextEncodingStage": 278.292,
+        "TimestepPreparationStage": 0.441
+      },
+      "median_denoise_step_ms": 4981.738
+    },
+    {
+      "case_id": "wan22_ti2v_5b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "task": "text-image-to-video",
+      "methodology": "client-e2e-v1",
+      "latency_s": 53.556,
+      "latency_samples_s": [
+        53.55,
+        53.556,
+        53.563
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 53.558,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 211.092,
+        "TextEncodingStage": 126.069,
+        "LatentPreparationStage": 0.135,
+        "TimestepPreparationStage": 0.353,
+        "DenoisingStage": 46843.056,
+        "DecodingStage": 6302.335
+      },
+      "server_latency_samples_s": [
+        53.455,
+        53.499,
+        53.504
+      ],
+      "server_latency_s": 53.499,
+      "server_stage_medians_ms": {
+        "DecodingStage": 6305.746,
+        "DenoisingStage": 47021.226,
+        "InputValidationStage": 26.042,
+        "LatentPreparationStage": 0.146,
+        "TextEncodingStage": 129.006,
+        "TimestepPreparationStage": 0.323
+      },
+      "median_denoise_step_ms": 949.582
+    },
+    {
+      "case_id": "ltx2.3_twostage_ti2v_2gpus",
+      "framework": "sglang",
+      "model": "Lightricks/LTX-2.3",
+      "task": "text-image-to-video",
+      "methodology": "client-e2e-v1",
+      "latency_s": 11.956,
+      "latency_samples_s": [
+        11.956,
+        11.952,
+        11.956
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 14.797,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 23.467,
+        "TextEncodingStage": 401.514,
+        "LTX2TextConnectorStage": 28.673,
+        "LTX2HalveResolutionStage": 0.049,
+        "LTX2LoRASwitchStage": 22.551,
+        "LTX2SigmaPreparationStage": 0.271,
+        "TimestepPreparationStage": 0.235,
+        "LTX2AVLatentPreparationStage": 0.128,
+        "LTX2ImageEncodingStage": 62.007,
+        "LTX2AVDenoisingStage": 9701.386,
+        "LTX2UpsampleStage": 3.888,
+        "ltx2_lora_switch_stage2": 42.608,
+        "ltx2_image_encoding_stage2": 55.386,
+        "LTX2RefinementStage": 3349.228,
+        "LTX2AVDecodingStage": 964.701
+      },
+      "server_latency_samples_s": [
+        11.9,
+        11.899,
+        11.887
+      ],
+      "server_latency_s": 11.899,
+      "server_stage_medians_ms": {
+        "InputValidationStage": 21.715,
+        "LTX2AVDecodingStage": 658.757,
+        "LTX2AVDenoisingStage": 9481.719,
+        "LTX2AVLatentPreparationStage": 0.107,
+        "LTX2HalveResolutionStage": 0.044,
+        "LTX2ImageEncodingStage": 54.846,
+        "LTX2LoRASwitchStage": 21.633,
+        "LTX2RefinementStage": 1022.075,
+        "LTX2SigmaPreparationStage": 0.228,
+        "LTX2TextConnectorStage": 28.701,
+        "LTX2UpsampleStage": 3.021,
+        "TextEncodingStage": 401.538,
+        "TimestepPreparationStage": 0.2,
+        "ltx2_image_encoding_stage2": 57.301,
+        "ltx2_lora_switch_stage2": 34.825
+      },
+      "median_denoise_step_ms": 313.23
+    },
+    {
+      "case_id": "ideogram4_fp8_t2i_2gpu",
+      "framework": "sglang",
+      "model": "ideogram-ai/ideogram-4-fp8",
+      "task": "text-to-image",
+      "methodology": "client-e2e-v1",
+      "latency_s": 3.723,
+      "latency_samples_s": [
+        3.723,
+        3.73,
+        3.722
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 3.738,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.041,
+        "Ideogram4TextEncodingStage": 135.801,
+        "LatentPreparationStage": 0.157,
+        "DenoisingStage": 3403.712,
+        "Ideogram4DecodingStage": 27.459
+      },
+      "server_latency_samples_s": [
+        3.568,
+        3.576,
+        3.567
+      ],
+      "server_latency_s": 3.568,
+      "server_stage_medians_ms": {
+        "DenoisingStage": 3408.74,
+        "Ideogram4DecodingStage": 28.151,
+        "Ideogram4TextEncodingStage": 126.175,
+        "InputValidationStage": 0.03,
+        "LatentPreparationStage": 0.103
+      },
+      "median_denoise_step_ms": 172.982
+    },
+    {
+      "case_id": "cosmos3_super_t2v_2gpu",
+      "framework": "sglang",
+      "model": "nvidia/Cosmos3-Super",
+      "task": "text-to-video",
+      "methodology": "client-e2e-v1",
+      "latency_s": 118.756,
+      "latency_samples_s": [
+        118.756,
+        118.71,
+        118.76
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 119.31,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "Cosmos3ImagePreprocessStage": 0.025,
+        "Cosmos3TokenizationStage": 3.01,
+        "Cosmos3LatentPreparationStage": 0.278,
+        "Cosmos3TimestepPreparationStage": 0.691,
+        "Cosmos3DenoisingStage": 115666.69,
+        "Cosmos3DecodingStage": 2950.007
+      },
+      "server_latency_samples_s": [
+        118.696,
+        118.616,
+        118.721
+      ],
+      "server_latency_s": 118.696,
+      "server_stage_medians_ms": {
+        "Cosmos3DecodingStage": 2499.752,
+        "Cosmos3DenoisingStage": 115546.541,
+        "Cosmos3ImagePreprocessStage": 0.016,
+        "Cosmos3LatentPreparationStage": 0.26,
+        "Cosmos3TimestepPreparationStage": 0.746,
+        "Cosmos3TokenizationStage": 3.728
+      }
+    },
+    {
+      "case_id": "wan22_i2v_a14b_720p",
+      "framework": "sglang",
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "task": "image-to-video",
+      "methodology": "client-e2e-v1",
+      "latency_s": 195.198,
+      "latency_samples_s": [
+        195.388,
+        194.828,
+        195.198
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 194.865,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 47.26,
+        "TextEncodingStage": 267.184,
+        "ImageVAEEncodingStage": 2474.474,
+        "LatentPreparationStage": 0.233,
+        "TimestepPreparationStage": 0.412,
+        "DenoisingStage": 190152.752,
+        "DecodingStage": 1744.362
+      },
+      "server_latency_samples_s": [
+        195.261,
+        194.781,
+        195.09
+      ],
+      "server_latency_s": 195.09,
+      "server_stage_medians_ms": {
+        "DecodingStage": 1732.428,
+        "DenoisingStage": 190478.901,
+        "ImageVAEEncodingStage": 2480.169,
+        "InputValidationStage": 49.524,
+        "LatentPreparationStage": 0.212,
+        "TextEncodingStage": 281.344,
+        "TimestepPreparationStage": 0.372
+      },
+      "median_denoise_step_ms": 4752.826
+    },
+    {
+      "case_id": "minimax_h3_t2va_5s",
+      "framework": "sglang",
+      "model": "MiniMaxAI/MiniMax-H3",
+      "task": "text-to-video",
+      "methodology": "client-e2e-v1",
+      "latency_s": 74.597,
+      "latency_samples_s": [
+        74.545,
+        74.597,
+        74.606
+      ],
+      "measurement_count": 3,
+      "first_request_latency_s": 74.346,
+      "warmup_requests": 1,
+      "error": null,
+      "first_request_stage_ms": {
+        "InputValidationStage": 0.043,
+        "MiniMaxH3PartitionAdmissionStage": 0.033,
+        "MiniMaxH3TextEncodingStage": 64.097,
+        "MiniMaxH3VisualEncodingStage": 0.029,
+        "MiniMaxH3AudioEncodingStage": 0.023,
+        "MiniMaxH3LatentPreparationStage": 22.639,
+        "MiniMaxH3TimestepPreparationStage": 0.247,
+        "MiniMaxH3DenoisingStage": 71878.106,
+        "MiniMaxH3DecodingStage": 1351.041
+      },
+      "server_latency_samples_s": [
+        74.483,
+        74.544,
+        74.585
+      ],
+      "server_latency_s": 74.544,
+      "server_stage_medians_ms": {
+        "InputValidationStage": 0.034,
+        "MiniMaxH3AudioEncodingStage": 0.022,
+        "MiniMaxH3DecodingStage": 1330.632,
+        "MiniMaxH3DenoisingStage": 72156.147,
+        "MiniMaxH3LatentPreparationStage": 22.701,
+        "MiniMaxH3PartitionAdmissionStage": 0.031,
+        "MiniMaxH3TextEncodingStage": 58.613,
+        "MiniMaxH3TimestepPreparationStage": 0.236,
+        "MiniMaxH3VisualEncodingStage": 0.024
+      },
+      "median_denoise_step_ms": 1461.653
+    }
+  ]
+}

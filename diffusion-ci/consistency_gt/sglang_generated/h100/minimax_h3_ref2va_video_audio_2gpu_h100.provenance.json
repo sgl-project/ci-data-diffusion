@@ -2,29 +2,35 @@
   "case_id": "minimax_h3_ref2va_video_audio_2gpu_h100",
   "platform": "h100",
   "num_gpus": 2,
-  "sglang_pr": 38671,
-  "source": "H100 CI generated frames; corrected inference step-count contract",
-  "sglang_head": "dd2b83b16abec0eeae2d92f5c4bcd53500a78e4c",
+  "sglang_pr": 51940,
+  "source": "H100 CI generated frames; Qwen3-VL vision tower replicated on every encoder TP rank and rounded like the Transformers reference",
+  "sglang_head": "1e285c2bbc7532437419ac1620fa7ee6c18bfd6b",
   "model": "MiniMaxAI/MiniMax-H3",
   "model_revision": "42ed227ee7df40d41602854ae760620d6eb651fe",
-  "sglang_ci_merge": "d85b6dde9d16da4c771739f9dfcb00e1d76fe899",
-  "ci_run_id": 37765026897,
-  "ci_job_id": 113270756398,
-  "ci_run_attempt": 1,
-  "artifact_id": 11548832065,
-  "artifact_name": "diffusion-failures-2gpu-2-1",
-  "artifact_zip_sha256": "cc32ff4db3613e9868defe16a3c2dfb05219f19ecc62d013a6e2d0129b4f4b0e",
+  "sglang_ci_merge": "ad1fd521b348294d9a7ddf05fde54e211d952248",
+  "ci_run_id": 44817259270,
+  "ci_job_id": 136668065143,
+  "ci_run_attempt": 2,
+  "artifact_id": 14684804464,
+  "artifact_name": "diffusion-failures-base-b-diffusion-test-2-gpu-large-1-2",
+  "artifact_zip_sha256": "33d992ca4daa35d7735ecdde1903a173844b95a6b2056ebe1a11595d044c0280",
   "artifact_source_directory": "request-1/consistency_failures/generated",
   "request_2_identical_file_hashes": true,
-  "previous_gt_revision": "73f6c5125896af7488eb5d8df48cd155cd352530",
-  "previous_gt_generation": {
-    "run_id": 36597643222,
-    "job_id": 109506691186,
-    "gt_commit": "e4ecc89babd228da083f2403b4a25eaa82eb708a",
-    "source_sha": "2e7e0b897c",
-    "requested_steps": 8,
-    "sigma_points": 8,
-    "actual_updates": 7
+  "repeat_on_another_runner": {
+    "ci_run_attempt": 1,
+    "ci_job_id": 136569179888,
+    "artifact_id": 14672371022,
+    "artifact_name": "diffusion-failures-base-b-diffusion-test-2-gpu-large-1-1",
+    "artifact_zip_sha256": "9a967275b3003a1384e498026be721b7acc28c5efcabed35b63aa615b151ac12",
+    "different_h100_host": true,
+    "request_1_and_2_identical_file_hashes": true
+  },
+  "previous_gt_revision": "4fe135ff3cb72fca12934948b7a6a26a23e535ff",
+  "previous_failure": {
+    "min_clip_similarity": 0.93345,
+    "min_ssim": 0.747119,
+    "min_psnr": 24.559786,
+    "max_mean_abs_diff": 4.396141
   },
   "request": {
     "seed": 42,
@@ -37,157 +43,81 @@
     "audio_flow_shift": 3.0,
     "quality": "exact"
   },
-  "independent_scheduler_reference": {
-    "repository": "huggingface/diffusers",
-    "revision": "d961a388fd02e4db38d17350c8dd9b8abe642e05",
-    "path": "src/diffusers/schedulers/scheduling_minimax_h3.py",
-    "reference_grid_points": "requested NFE + 1",
-    "cuda_cases": [
-      {
-        "steps": 1,
-        "shift": 3.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 1,
-        "shift": 6.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 1,
-        "shift": 12.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 2,
-        "shift": 3.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 2,
-        "shift": 6.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 2,
-        "shift": 12.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 7,
-        "shift": 3.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 7,
-        "shift": 6.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 7,
-        "shift": 12.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 8,
-        "shift": 3.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 8,
-        "shift": 6.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 8,
-        "shift": 12.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 10,
-        "shift": 3.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 10,
-        "shift": 6.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 10,
-        "shift": 12.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 50,
-        "shift": 3.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 50,
-        "shift": 6.0,
-        "max_abs_error": 0.0
-      },
-      {
-        "steps": 50,
-        "shift": 12.0,
-        "max_abs_error": 0.0
-      }
-    ]
-  },
-  "full_model_validation": {
-    "source_sha": "dd2b83b16abec0eeae2d92f5c4bcd53500a78e4c",
-    "model_revision": "42ed227ee7df40d41602854ae760620d6eb651fe",
-    "gpu": "NVIDIA H200",
+  "vision_tower_parity": {
+    "base_sha": "2c673ff255fa7cbfbb2952a1ae18a341c9a039b6",
+    "pr_sha": "1e285c2bbc7532437419ac1620fa7ee6c18bfd6b",
+    "gpu": "2x NVIDIA H200",
     "torch_version": "2.14.1+cu130",
-    "nfe": 8,
-    "reference_grid_points": 9,
-    "seed": 42,
-    "width": 672,
-    "height": 384,
-    "duration_seconds": 4.0,
-    "frame_shape": [
-      107,
-      384,
-      672,
-      3
-    ],
-    "audio_shape": [
-      2,
-      142400
-    ],
-    "frames_sha256": "a3d7189424bf0fc60b27e99ad623aa1977e7e3e2721b379c7ce73c33279ad8da",
-    "video_exact_match": true,
-    "audio_exact_match": false,
-    "reference_audio_equals_native_repeat": true,
-    "audio_metrics": {
-      "reference_grid9": {
-        "audio_max_abs": 1.9255094230175018e-07,
-        "audio_rmse": 1.816748529392953e-08
+    "cudnn_version": 92400,
+    "transformers_version": "5.19.0",
+    "reference": "Transformers Qwen3VLVisionModel of this checkpoint's text_encoder (Qwen3VLForConditionalGeneration.from_pretrained), bf16, attention sdpa, one GPU",
+    "method": "Tower input and output tensors captured in the serving path of this case (encoder TP 2 on two GPUs, TP 1 on one); the reference runs on the captured input tensor. Error is ||x - ref||_2 / ||ref||_2 over all elements of pooler_output, in float64.",
+    "inputs": {
+      "777ed242c4f5": {
+        "input": "image: frame 0 of assets/ref2va.mp4 sent as one image reference",
+        "grid_thw": [
+          [
+            1,
+            48,
+            84
+          ]
+        ],
+        "patches": 4032,
+        "pooler_output_relative_l2_error": {
+          "base_tp1": 0.037301,
+          "base_tp2": 0.06757,
+          "pr_tp1": 0.0,
+          "pr_tp2": 0.0
+        },
+        "pr_all_outputs_bit_identical_to_reference": {
+          "tp1": true,
+          "tp2": true
+        },
+        "pr_tp1_equals_tp2_bitwise": true,
+        "pr_tp2_ranks_bit_identical": true,
+        "base_tp1_vs_tp2_relative_l2": 0.063516,
+        "reference_processes_bit_identical": true,
+        "reference_bf16_vs_fp32_relative_l2": 0.061587
       },
-      "native_repeat": {
-        "audio_max_abs": 1.9255094230175018e-07,
-        "audio_rmse": 1.816748529392953e-08
+      "b08dc71baeff": {
+        "input": "video: assets/ref2va.mp4 as this case's request feeds it",
+        "grid_thw": [
+          [
+            5,
+            48,
+            84
+          ]
+        ],
+        "patches": 20160,
+        "pooler_output_relative_l2_error": {
+          "base_tp1": 0.040431,
+          "base_tp2": 0.07494,
+          "pr_tp1": 0.0,
+          "pr_tp2": 0.0
+        },
+        "pr_all_outputs_bit_identical_to_reference": {
+          "tp1": true,
+          "tp2": true
+        },
+        "pr_tp1_equals_tp2_bitwise": true,
+        "pr_tp2_ranks_bit_identical": true,
+        "base_tp1_vs_tp2_relative_l2": 0.07213,
+        "reference_processes_bit_identical": true,
+        "reference_bf16_vs_fp32_relative_l2": 0.070081
       }
     },
-    "scope": "Same native engine with independently generated reference sigma grids. First-request float audio differs from both subsequent requests; reference-grid audio and native-repeat audio are bitwise equal."
-  },
-  "previous_failure": {
-    "min_clip_similarity": 0.892302,
-    "min_ssim": 0.689509,
-    "min_psnr": 23.305418,
-    "max_mean_abs_diff": 5.602567
+    "scope": "Measured on H200, not on the H100 runners that generated the frames. The reference's bf16 rounding is what the tower now reproduces; an fp32 run of the same weights differs from the bf16 reference by the amounts listed."
   },
   "frames": {
     "minimax_h3_ref2va_video_audio_2gpu_h100_2gpu_frame_0.png": {
-      "file_sha256": "c57c1211b32183091d3ead8ae2425a1eb6cf3c8df702889c386634f953dffa80"
+      "file_sha256": "55c470fb494a95ffd358ae948bbf1ee868bd06cd66debadc0cea09bafedfefbf"
     },
     "minimax_h3_ref2va_video_audio_2gpu_h100_2gpu_frame_mid.png": {
-      "file_sha256": "be8fbf96bbde8fceebbf786181a536c04c0d7941ed89f6234a1f2af5726730f8"
+      "file_sha256": "4405d0f32dc1e8def349f47043233663781fbe886724ad43ff0ce0dfd8287f45"
     },
     "minimax_h3_ref2va_video_audio_2gpu_h100_2gpu_frame_last.png": {
-      "file_sha256": "50db52dafc3152c017ca650bd5321fadadf44d831edaf5d1abd93d66f1046d3a"
+      "file_sha256": "4cd23fed916e29ed20b725e5b6215170153ebf407a12aecdcc07239569f54542"
     }
   },
-  "scope": "Three decoded video PNGs only. Audio GT and all thresholds unchanged. Full-model validation compares schedules in the native engine, not two independent engines."
+  "scope": "Three decoded video PNGs only. Audio GT and all thresholds unchanged; the audio check passed against the existing audio GT in the same CI job. These frames are specific to the H100 runners: on a 2x H200 machine with the same packages, the base commit's key frames reach only SSIM 0.75-0.85 against the previous H100 GT, which the H100 runners match at SSIM 0.97-1.00."
 }

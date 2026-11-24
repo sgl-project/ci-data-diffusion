@@ -1,6 +1,6 @@
 # SGLang-Diffusion Nightly Performance Dashboard
 
-*Generated: Nov 21 | Commit: `af80e8c`*
+*Generated: Nov 24 | Commit: `ac0380c`*
 
 *Methodology `client-e2e-v1`: client-side latency through each framework's public API, from submit until the output is downloaded; 1 identical client warmup request(s) per case, discarded. First request = the first request after the server reports ready. Server perf dumps are telemetry only.*
 
@@ -9,58 +9,58 @@
 > [!WARNING]
 > **Performance Regression Detected**
 >
-> - **ltx2.3_twostage_ti2v_2gpus** (sglang): 10.13s vs 5-run median 9.54s (+6.2%)
+> - **zimage_turbo_t2i_1024** (sglang): 0.63s vs 5-run median 0.53s (+19.5%)
 
 
 ## SGLang-Diffusion Performance
 
 | Model | Risk | Client samples | Server samples | First request (s) | sglang median (s) |
 |-------|------|----------------|----------------|-------------------|---------|
-| Anima-Base-v1.0-Diffusers | ✅ | 3 | 3/3 | 2.40 | **2.38** |
-| FLUX.1-dev | ✅ | 3 | 3/3 | 4.25 | **4.24** |
-| FLUX.2-dev | ✅ | 3 | 3/3 | 13.10 | **12.95** |
-| Qwen-Image-2512 | ✅ | 3 | 3/3 | 7.68 | **7.64** |
-| Qwen-Image-Edit-2511 | ✅ | 3 | 3/3 | 13.83 | **13.85** |
-| Z-Image-Turbo | ✅ | 3 | 3/3 | 0.58 | **0.53** |
-| Wan2.2-T2V-A14B-Diffusers | ✅ | 3 | 3/3 | 202.15 | **202.16** |
-| Wan2.2-TI2V-5B-Diffusers | ✅ | 3 | 3/3 | 52.97 | **53.16** |
-| LTX-2.3 | ⚠️ | 3 | 3/3 | 10.67 | **10.13** |
-| ideogram-4-fp8 | ✅ | 3 | 3/3 | 3.73 | **3.72** |
-| Cosmos3-Super | ✅ | 3 | 3/3 | 118.49 | **117.89** |
-| Wan2.2-I2V-A14B-Diffusers | ✅ | 3 | 3/3 | 194.51 | **195.67** |
-| MiniMax-H3 | ✅ | 3 | 3/3 | 73.03 | **73.44** |
+| Anima-Base-v1.0-Diffusers | ✅ | 3 | 3/3 | 2.53 | **2.38** |
+| flux-3-image-klein-base | ✅ | 3 | 3/3 | 6.75 | **6.72** |
+| flux-3-image-klein | ✅ | 3 | 3/3 | 1.24 | **1.19** |
+| Qwen-Image-2512 | ✅ | 3 | 3/3 | 7.84 | **7.85** |
+| Qwen-Image-Edit-2511 | ✅ | 3 | 3/3 | 14.39 | **14.23** |
+| Z-Image-Turbo | ⚠️ | 3 | 3/3 | 0.64 | **0.63** |
+| Wan2.2-T2V-A14B-Diffusers | ✅ | 3 | 3/3 | 200.59 | **200.61** |
+| Wan2.2-TI2V-5B-Diffusers | ✅ | 3 | 3/3 | 53.04 | **53.18** |
+| LTX-2.3 | ✅ | 3 | 3/3 | 12.82 | **9.47** |
+| ideogram-4-fp8 | ✅ | 3 | 3/3 | 3.71 | **3.71** |
+| Cosmos3-Super | ✅ | 3 | 3/3 | 118.26 | **117.20** |
+| Wan2.2-I2V-A14B-Diffusers | ✅ | 3 | 3/3 | 194.26 | **194.47** |
+| MiniMax-H3 | ✅ | 3 | 3/3 | 73.10 | **73.23** |
 
 ## SGLang Server-Side Breakdown
 
 | Model | Server total (s) | Text encode (s) | Denoise (s) | Decode (s) | Median denoise step (ms) |
 |-------|------------------|-----------------|--------------|------------|---------------------------|
-| Anima-Base-v1.0-Diffusers | 2.38 | 0.00 | 2.14 | 0.22 | 71.71 |
-| FLUX.1-dev | 4.15 | 0.03 | 3.95 | 0.01 | 79.63 |
-| FLUX.2-dev | 12.91 | 0.37 | 12.09 | 0.01 | 241.38 |
-| Qwen-Image-2512 | 7.54 | 0.02 | 7.50 | 0.01 | 150.86 |
-| Qwen-Image-Edit-2511 | 13.70 | N/A | 13.48 | 0.02 | 339.39 |
-| Z-Image-Turbo | 0.43 | 0.01 | 0.41 | 0.01 | 50.96 |
-| Wan2.2-T2V-A14B-Diffusers | 202.06 | 0.27 | 199.97 | 1.53 | 4997.35 |
-| Wan2.2-TI2V-5B-Diffusers | 53.12 | 0.13 | 46.52 | 6.44 | 943.20 |
-| LTX-2.3 | 10.09 | 0.40 | 7.87 | 0.61 | 254.34 |
-| ideogram-4-fp8 | 3.57 | 0.13 | 3.41 | 0.03 | 172.32 |
-| Cosmos3-Super | 117.84 | 0.00 | 115.50 | 1.72 | N/A |
-| Wan2.2-I2V-A14B-Diffusers | 195.59 | 0.27 | 191.24 | 1.48 | 4781.09 |
-| MiniMax-H3 | 73.34 | 0.05 | 70.98 | 1.29 | 1439.04 |
+| Anima-Base-v1.0-Diffusers | 2.37 | 0.00 | 2.13 | 0.22 | 71.65 |
+| flux-3-image-klein-base | 6.64 | N/A | N/A | N/A | N/A |
+| flux-3-image-klein | 1.11 | N/A | N/A | N/A | N/A |
+| Qwen-Image-2512 | 7.75 | 0.23 | 7.50 | 0.01 | 150.62 |
+| Qwen-Image-Edit-2511 | 14.08 | N/A | 13.45 | 0.02 | 339.37 |
+| Z-Image-Turbo | 0.54 | 0.13 | 0.40 | 0.01 | 50.58 |
+| Wan2.2-T2V-A14B-Diffusers | 200.57 | 0.27 | 198.51 | 1.51 | 4967.06 |
+| Wan2.2-TI2V-5B-Diffusers | 53.09 | 0.33 | 46.16 | 6.56 | 934.93 |
+| LTX-2.3 | 9.45 | 0.40 | 7.27 | 0.58 | 237.89 |
+| ideogram-4-fp8 | 3.56 | 0.13 | 3.40 | 0.03 | 172.38 |
+| Cosmos3-Super | 117.14 | 0.00 | 114.85 | 1.72 | N/A |
+| Wan2.2-I2V-A14B-Diffusers | 194.41 | 0.27 | 190.08 | 1.47 | 4747.85 |
+| MiniMax-H3 | 73.14 | 0.05 | 70.82 | 1.26 | 1435.69 |
 
 ### Latency Trend: anima_base_t2i_1024
 
 ![Latency Trend anima_base_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_anima_base_t2i_1024.png)
 
 
-### Latency Trend: flux1_dev_t2i_1024
+### Latency Trend: flux3_base_t2i_1024
 
-![Latency Trend flux1_dev_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_flux1_dev_t2i_1024.png)
+![Latency Trend flux3_base_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_flux3_base_t2i_1024.png)
 
 
-### Latency Trend: flux2_dev_t2i_1024
+### Latency Trend: flux3_distilled_t2i_1024
 
-![Latency Trend flux2_dev_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_flux2_dev_t2i_1024.png)
+![Latency Trend flux3_distilled_t2i_1024](https://raw.githubusercontent.com/sgl-project/ci-data-diffusion/main/diffusion-comparisons/charts/latency_flux3_distilled_t2i_1024.png)
 
 
 ### Latency Trend: qwen_image_2512_t2i_1024
@@ -115,43 +115,43 @@
 
 ## SGLang Performance Trend (Last 29 Runs)
 
-| Date | Commit | anima_base_t2i_1024 (s) | flux1_dev_t2i_1024 (s) | flux2_dev_t2i_1024 (s) | qwen_image_2512_t2i_1024 (s) | qwen_image_edit_2511 (s) | zimage_turbo_t2i_1024 (s) | wan22_t2v_a14b_720p (s) | wan22_ti2v_5b_720p (s) | ltx2.3_twostage_ti2v_2gpus (s) | ideogram4_fp8_t2i_2gpu (s) | cosmos3_super_t2v_2gpu (s) | wan22_i2v_a14b_720p (s) | minimax_h3_t2va_5s (s) | Trend |
+| Date | Commit | anima_base_t2i_1024 (s) | flux3_base_t2i_1024 (s) | flux3_distilled_t2i_1024 (s) | qwen_image_2512_t2i_1024 (s) | qwen_image_edit_2511 (s) | zimage_turbo_t2i_1024 (s) | wan22_t2v_a14b_720p (s) | wan22_ti2v_5b_720p (s) | ltx2.3_twostage_ti2v_2gpus (s) | ideogram4_fp8_t2i_2gpu (s) | cosmos3_super_t2v_2gpu (s) | wan22_i2v_a14b_720p (s) | minimax_h3_t2va_5s (s) | Trend |
 |------|--------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|-------|
-| Nov 21 | `af80e8c` | 2.38 | 4.24 | 12.95 | 7.64 | 13.85 | 0.53 | 202.16 | 53.16 | 10.13 | 3.72 | 117.89 | 195.67 | 73.44 | :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 19 | `9667988` | 2.40 | 4.11 | 12.95 | 7.68 | 13.91 | 0.53 | 200.56 | 53.34 | 9.65 | 3.74 | 117.92 | 194.48 | 73.46 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 18 | `aa83b03` | 2.37 | 4.07 | 12.87 | 7.64 | 13.83 | 0.53 | 200.54 | 52.87 | 9.46 | 3.71 | 117.15 | 194.20 | 73.26 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 17 | `b2cc023` | 2.41 | 4.11 | 12.93 | 7.67 | 13.90 | 0.54 | 200.75 | 53.34 | 9.75 | 3.74 | 117.85 | 194.58 | 73.50 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 15 | `e4c3f00` | 2.38 | 4.07 | 12.85 | 7.63 | 13.82 | 0.53 | 200.65 | 52.87 | 9.54 | 3.71 | 117.41 | 194.26 | 73.20 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 13 | `1b2870d` | 2.38 | 4.07 | 12.92 | 7.64 | 13.89 | 0.58 | 202.45 | 53.20 | 9.54 | 3.72 | 118.01 | 195.61 | 73.52 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 11 | `23a45fd` | 2.38 | 4.10 | 12.90 | 7.66 | 13.84 | 0.57 | 202.73 | 53.23 | 9.80 | 3.72 | 118.05 | 196.27 | 73.57 | :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 09 | `7046812` | 2.45 | 4.08 | 12.89 | 7.64 | 13.84 | 0.58 | 200.50 | 52.82 | 9.23 | 3.71 | 117.36 | 194.24 | 73.40 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 07 | `ba59064` | 2.45 | 4.11 | 12.94 | 7.65 | 13.91 | 0.59 | 200.75 | 53.30 | 9.46 | 3.73 | 118.27 | 194.35 | 74.73 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 05 | `3fa242f` | 2.48 | 4.12 | 12.95 | 7.68 | 13.90 | 0.59 | 200.24 | 53.19 | 10.97 | 3.73 | 118.38 | 193.34 | 74.53 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 03 | `99fd010` | 2.45 | 4.12 | 12.96 | 7.66 | 13.91 | 0.58 | 200.29 | 53.30 | 9.31 | 3.74 | 118.22 | 194.11 | 74.58 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Nov 01 | `f171859` | 2.44 | 4.11 | 12.88 | 7.65 | 13.82 | 0.58 | 200.99 | 53.14 | 9.32 | 3.72 | 117.71 | 194.63 | 74.72 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 31 | `8368f86` | 2.46 | 4.11 | 12.93 | 7.66 | 13.90 | 0.58 | 200.28 | 53.28 | 9.34 | 3.74 | 118.10 | 194.15 | 74.69 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 29 | `8b6de67` | 2.43 | 4.07 | 12.89 | 7.63 | 13.80 | 0.58 | 200.46 | 52.80 | 9.74 | 3.70 | 117.37 | 194.16 | 74.44 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 27 | `635430d` | 2.47 | 4.12 | 12.96 | 7.66 | 13.92 | 0.59 | 200.07 | 53.21 | 11.85 | 3.72 | 117.96 | 193.54 | 74.52 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 27 | `2a7987f` | 2.46 | 4.10 | 12.96 | 7.68 | 13.91 | 0.59 | 200.47 | 53.14 | 12.16 | 3.73 | 118.08 | 194.07 | 74.81 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 25 | `a99c7d0` | 2.46 | 4.11 | 12.91 | 7.68 | 13.92 | 0.59 | 201.51 | 53.56 | 11.96 | 3.72 | 118.76 | 195.20 | 74.60 | :left_right_arrow:  :arrow_down:  :left_right_arrow:  :arrow_down:  :arrow_down:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 23 | `02b9836` | 2.43 | 4.25 | 12.94 | 7.87 | 14.22 | 0.68 | 202.65 | 54.06 | 9.86 | 3.81 | 118.59 | 197.76 | 74.55 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 21 | `8e3e298` | 2.45 | 4.28 | 13.00 | 7.89 | 14.31 | 0.68 | 202.61 | 54.42 | 10.35 | 3.83 | 119.29 | 197.40 | 74.68 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 21 | `62cee1b` | 2.47 | 4.28 | 12.99 | 8.00 | 14.33 | 0.68 | 202.42 | 54.45 | 11.85 | 3.82 | 119.18 | 196.89 | 74.60 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 19 | `62cee1b` | 2.43 | 4.25 | 12.97 | 7.86 | 14.23 | 0.68 | 203.61 | 54.01 | 10.59 | 3.80 | 118.43 | 197.66 | 74.49 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 17 | `4eb606b` | 2.47 | 4.25 | 13.05 | 8.14 | 14.36 | 0.68 | 202.61 | 54.38 | 13.19 | 3.82 | 119.47 | 197.38 | 74.75 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 15 | `c4870d9` | 2.42 | 4.26 | 12.93 | 7.86 | 14.26 | 0.68 | 202.83 | 54.01 | 10.24 | 3.80 | 118.31 | 197.52 | 74.50 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 14 | `684fea8` | 2.45 | 4.27 | 13.03 | 8.27 | 14.35 | 0.69 | 203.06 | 54.64 | 10.68 | 3.83 | 119.73 | 197.32 | 74.66 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 13 | `27b6830` | 2.44 | 4.29 | 13.00 | 7.91 | 14.32 | 0.69 | 203.50 | 54.73 | 10.55 | 3.83 | 119.53 | 197.63 | 74.62 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 11 | `11bfd86` | 2.45 | 4.28 | 13.04 | 8.12 | 14.60 | 0.70 | 203.29 | 54.76 | 11.40 | 3.84 | 119.63 | 197.92 | 74.77 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 11 | `89e24e7` | 2.45 | 4.29 | 13.06 | 8.12 | 14.56 | 0.69 | 203.14 | 54.75 | 11.91 | 3.83 | 119.53 | 197.82 | 74.69 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
-| Oct 09 | `1203eb9` | 2.44 | 4.29 | 13.01 | 8.12 | 14.57 | 0.69 | 207.26 | 54.70 | 11.71 | 3.84 | 119.45 | 201.08 | 74.89 | :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down: |
-| Oct 07 | `1e86143` | 2.47 | 4.30 | 13.02 | 8.52 | 14.53 | 0.69 | 206.71 | 54.90 | 19.00 | 3.82 | 119.17 | 201.00 | 77.23 | -- |
+| Nov 24 | `ac0380c` | 2.38 | 6.72 | 1.19 | 7.85 | 14.23 | 0.63 | 200.61 | 53.18 | 9.47 | 3.71 | 117.20 | 194.47 | 73.23 | :left_right_arrow:    :arrow_up:  :arrow_up:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 21 | `af80e8c` | 2.38 | N/A | N/A | 7.64 | 13.85 | 0.53 | 202.16 | 53.16 | 10.13 | 3.72 | 117.89 | 195.67 | 73.44 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 19 | `9667988` | 2.40 | N/A | N/A | 7.68 | 13.91 | 0.53 | 200.56 | 53.34 | 9.65 | 3.74 | 117.92 | 194.48 | 73.46 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 18 | `aa83b03` | 2.37 | N/A | N/A | 7.64 | 13.83 | 0.53 | 200.54 | 52.87 | 9.46 | 3.71 | 117.15 | 194.20 | 73.26 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 17 | `b2cc023` | 2.41 | N/A | N/A | 7.67 | 13.90 | 0.54 | 200.75 | 53.34 | 9.75 | 3.74 | 117.85 | 194.58 | 73.50 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 15 | `e4c3f00` | 2.38 | N/A | N/A | 7.63 | 13.82 | 0.53 | 200.65 | 52.87 | 9.54 | 3.71 | 117.41 | 194.26 | 73.20 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 13 | `1b2870d` | 2.38 | N/A | N/A | 7.64 | 13.89 | 0.58 | 202.45 | 53.20 | 9.54 | 3.72 | 118.01 | 195.61 | 73.52 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 11 | `23a45fd` | 2.38 | N/A | N/A | 7.66 | 13.84 | 0.57 | 202.73 | 53.23 | 9.80 | 3.72 | 118.05 | 196.27 | 73.57 | :arrow_down:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 09 | `7046812` | 2.45 | N/A | N/A | 7.64 | 13.84 | 0.58 | 200.50 | 52.82 | 9.23 | 3.71 | 117.36 | 194.24 | 73.40 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 07 | `ba59064` | 2.45 | N/A | N/A | 7.65 | 13.91 | 0.59 | 200.75 | 53.30 | 9.46 | 3.73 | 118.27 | 194.35 | 74.73 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 05 | `3fa242f` | 2.48 | N/A | N/A | 7.68 | 13.90 | 0.59 | 200.24 | 53.19 | 10.97 | 3.73 | 118.38 | 193.34 | 74.53 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 03 | `99fd010` | 2.45 | N/A | N/A | 7.66 | 13.91 | 0.58 | 200.29 | 53.30 | 9.31 | 3.74 | 118.22 | 194.11 | 74.58 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Nov 01 | `f171859` | 2.44 | N/A | N/A | 7.65 | 13.82 | 0.58 | 200.99 | 53.14 | 9.32 | 3.72 | 117.71 | 194.63 | 74.72 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 31 | `8368f86` | 2.46 | N/A | N/A | 7.66 | 13.90 | 0.58 | 200.28 | 53.28 | 9.34 | 3.74 | 118.10 | 194.15 | 74.69 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 29 | `8b6de67` | 2.43 | N/A | N/A | 7.63 | 13.80 | 0.58 | 200.46 | 52.80 | 9.74 | 3.70 | 117.37 | 194.16 | 74.44 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 27 | `635430d` | 2.47 | N/A | N/A | 7.66 | 13.92 | 0.59 | 200.07 | 53.21 | 11.85 | 3.72 | 117.96 | 193.54 | 74.52 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 27 | `2a7987f` | 2.46 | N/A | N/A | 7.68 | 13.91 | 0.59 | 200.47 | 53.14 | 12.16 | 3.73 | 118.08 | 194.07 | 74.81 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 25 | `a99c7d0` | 2.46 | N/A | N/A | 7.68 | 13.92 | 0.59 | 201.51 | 53.56 | 11.96 | 3.72 | 118.76 | 195.20 | 74.60 | :left_right_arrow:    :arrow_down:  :arrow_down:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 23 | `02b9836` | 2.43 | N/A | N/A | 7.87 | 14.22 | 0.68 | 202.65 | 54.06 | 9.86 | 3.81 | 118.59 | 197.76 | 74.55 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 21 | `8e3e298` | 2.45 | N/A | N/A | 7.89 | 14.31 | 0.68 | 202.61 | 54.42 | 10.35 | 3.83 | 119.29 | 197.40 | 74.68 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 21 | `62cee1b` | 2.47 | N/A | N/A | 8.00 | 14.33 | 0.68 | 202.42 | 54.45 | 11.85 | 3.82 | 119.18 | 196.89 | 74.60 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 19 | `62cee1b` | 2.43 | N/A | N/A | 7.86 | 14.23 | 0.68 | 203.61 | 54.01 | 10.59 | 3.80 | 118.43 | 197.66 | 74.49 | :left_right_arrow:    :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 17 | `4eb606b` | 2.47 | N/A | N/A | 8.14 | 14.36 | 0.68 | 202.61 | 54.38 | 13.19 | 3.82 | 119.47 | 197.38 | 74.75 | :left_right_arrow:    :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 15 | `c4870d9` | 2.42 | N/A | N/A | 7.86 | 14.26 | 0.68 | 202.83 | 54.01 | 10.24 | 3.80 | 118.31 | 197.52 | 74.50 | :left_right_arrow:    :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 14 | `684fea8` | 2.45 | N/A | N/A | 8.27 | 14.35 | 0.69 | 203.06 | 54.64 | 10.68 | 3.83 | 119.73 | 197.32 | 74.66 | :left_right_arrow:    :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 13 | `27b6830` | 2.44 | N/A | N/A | 7.91 | 14.32 | 0.69 | 203.50 | 54.73 | 10.55 | 3.83 | 119.53 | 197.63 | 74.62 | :left_right_arrow:    :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 11 | `11bfd86` | 2.45 | N/A | N/A | 8.12 | 14.60 | 0.70 | 203.29 | 54.76 | 11.40 | 3.84 | 119.63 | 197.92 | 74.77 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 11 | `89e24e7` | 2.45 | N/A | N/A | 8.12 | 14.56 | 0.69 | 203.14 | 54.75 | 11.91 | 3.83 | 119.53 | 197.82 | 74.69 | :left_right_arrow:    :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
+| Oct 09 | `1203eb9` | 2.44 | N/A | N/A | 8.12 | 14.57 | 0.69 | 207.26 | 54.70 | 11.71 | 3.84 | 119.45 | 201.08 | 74.89 | -- |
 
 > [!CAUTION]
 > **Action Required — Performance Alert**
 >
 > The following cases need attention:
-> - ltx2.3_twostage_ti2v_2gpus: SGLang regression +6.2% vs 5-run median (10.13s vs 9.54s)
+> - zimage_turbo_t2i_1024: SGLang regression +19.5% vs 5-run median (0.63s vs 0.53s)
 
 
 ---

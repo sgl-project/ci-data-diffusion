@@ -1,0 +1,58 @@
+{
+  "case": "flux_2_ti2i_multi_image_cache_dit",
+  "source_pr": "https://github.com/sgl-project/sglang/pull/51466",
+  "candidate_commit": "65e923fe1ed2e082332ef57287e832df6097df67",
+  "reference_commit": "b1ef3a60797aa6c29bcfa4cc3bc135dd2f19ec22",
+  "reference": "The unmodified main pipeline uses explicit 1024x1024 dimensions independently derived from the first reference via Diffusers v0.37.0. The PR selects the same dimensions from the ordered inputs with no size specified.",
+  "reference_source": "https://github.com/huggingface/diffusers/blob/v0.37.0/src/diffusers/pipelines/flux2/pipeline_flux2.py#L888-L902",
+  "model": "black-forest-labs/FLUX.2-dev",
+  "revision": "e8af80c9dd820ab07ee4171d024f03e5c4b3024b",
+  "inputs": [
+    {
+      "url": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-Image/edit2509/edit2509_1.jpg",
+      "sha256": "c91431b29ff9c5050e3570f3d957c179b98d42e074d780b8f3df0aca0fa5d774",
+      "size": [
+        1228,
+        1228
+      ]
+    },
+    {
+      "url": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-Image/edit2509/edit2509_2.jpg",
+      "sha256": "4c081d9beaee2c775946a40839f94df9622ff6cd02ea17ea3d00f26d1a18e085",
+      "size": [
+        1228,
+        1226
+      ]
+    }
+  ],
+  "prompt": "The magician bear is on the left, the alchemist bear is on the right, facing each other in the central park square.",
+  "seed": 42,
+  "steps": 50,
+  "guidance": 4,
+  "quality": "exact",
+  "cache_dit": true,
+  "parallelism": "1 GPU",
+  "hardware": "NVIDIA H200",
+  "target_ci_platform": "h100",
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "diffusers": "0.37.0",
+    "cache-dit": "1.5.1",
+    "transformers": "5.19.0"
+  },
+  "comparison": {
+    "clip": 1.0,
+    "ssim": 1.0,
+    "psnr": "infinity",
+    "mae": 0.0,
+    "rgb_equal": true,
+    "thresholds": {
+      "clip_threshold": 0.94,
+      "ssim_threshold": 0.9,
+      "psnr_threshold": 22,
+      "mean_abs_diff_threshold": 9
+    },
+    "metric_model": "openai/clip-vit-large-patch14"
+  },
+  "reference_jpeg_sha256": "d158050a16521e1805cbf9b68016d87f4b56cd1e29c8bf10f6cd889c508be9a9"
+}
